@@ -1,0 +1,10 @@
+{
+  "name": "arkos",
+  "version": "0.4.3",
+  "description": "Camada ARKOS: tema Ink/Volt, aviso de módulo, falha por passo e fechamento de turno com a marca.",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "N4G"
+  },
+  "license": "UNLICENSED"
+}

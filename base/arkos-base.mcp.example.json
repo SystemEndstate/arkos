@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "arkos-base": {
+      "type": "http",
+      "url": "https://base.arkos.example/mcp",
+      "headers": { "Authorization": "Bearer ${ARKOS_BASE_TOKEN}" }
+    }
+  }
+}

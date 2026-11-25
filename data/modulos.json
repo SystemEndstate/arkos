@@ -1,0 +1,408 @@
+{
+  "_fonte": "engine/MODULOS.md (14 módulos). Palavras-chave em pt-BR e en, sem acento e minúsculas. Peso: termo com '!' vale 3, o resto 1. Plural simples casa sozinho.",
+  "modulos": [
+    {
+      "id": "programacao",
+      "nome": "Programação",
+      "curto": "Dev",
+      "pt": [
+        "!codigo",
+        "!bug",
+        "!debug",
+        "!refatorar",
+        "!deploy",
+        "!backend",
+        "!frontend",
+        "build",
+        "teste",
+        "erro",
+        "funcao",
+        "endpoint",
+        "banco de dados",
+        "migracao",
+        "sistema",
+        "arquitetura",
+        "seguranca",
+        "repositorio",
+        "compilar"
+      ],
+      "en": [
+        "!code",
+        "!refactor",
+        "!api",
+        "typescript",
+        "react",
+        "node",
+        "python",
+        "golang",
+        "commit",
+        "repo",
+        "software",
+        "app",
+        "test",
+        "function",
+        "database",
+        "migration"
+      ]
+    },
+    {
+      "id": "design",
+      "nome": "Design e sistema visual",
+      "curto": "Design",
+      "pt": [
+        "!design",
+        "!logo",
+        "!interface",
+        "!identidade visual",
+        "!design system",
+        "layout",
+        "marca",
+        "paleta",
+        "tipografia",
+        "pagina",
+        "tela",
+        "componente",
+        "visual",
+        "site"
+      ],
+      "en": [
+        "!ui",
+        "!ux",
+        "brand",
+        "figma",
+        "typography",
+        "screen",
+        "component",
+        "website"
+      ]
+    },
+    {
+      "id": "video",
+      "nome": "Vídeo e motion",
+      "curto": "Vídeo",
+      "pt": [
+        "!video",
+        "!motion",
+        "!animacao",
+        "edicao",
+        "roteiro de video",
+        "trilha",
+        "som",
+        "legenda"
+      ],
+      "en": [
+        "!explainer",
+        "remotion",
+        "hyperframes",
+        "b-roll",
+        "vsl",
+        "footage",
+        "animation"
+      ]
+    },
+    {
+      "id": "seo",
+      "nome": "SEO",
+      "curto": "SEO",
+      "pt": [
+        "!seo",
+        "!palavra-chave",
+        "ranquear",
+        "google organico",
+        "busca organica",
+        "sitemap"
+      ],
+      "en": [
+        "!keyword",
+        "backlink",
+        "schema",
+        "serp",
+        "geo",
+        "organic search",
+        "rank"
+      ]
+    },
+    {
+      "id": "growth",
+      "nome": "Growth e aquisição",
+      "curto": "Growth",
+      "pt": [
+        "!prospeccao",
+        "!prospectar",
+        "!minerar",
+        "!mineracao",
+        "contatos",
+        "lista de e-mail",
+        "email frio",
+        "demanda organica",
+        "aquisicao",
+        "captacao",
+        "leads",
+        "crm",
+        "pipeline",
+        "linkedin"
+      ],
+      "en": [
+        "!growth",
+        "!outreach",
+        "cold email",
+        "lead gen",
+        "scraping",
+        "prospects"
+      ]
+    },
+    {
+      "id": "trafego",
+      "nome": "Tráfego pago",
+      "curto": "Tráfego",
+      "pt": [
+        "!trafego",
+        "!anuncio",
+        "!campanha",
+        "!meta ads",
+        "!google ads",
+        "!tiktok ads",
+        "orcamento",
+        "lance",
+        "escalar",
+        "pausar",
+        "conjunto",
+        "pixel",
+        "meta",
+        "facebook",
+        "!mercado livre",
+        "!shopee",
+        "!shopify",
+        "!tiktok shop",
+        "ecommerce",
+        "e-commerce",
+        "loja virtual",
+        "marketplace",
+        "capi"
+      ],
+      "en": [
+        "!ads",
+        "!ad",
+        "!campaign",
+        "cpa",
+        "cpc",
+        "ctr",
+        "roas",
+        "budget",
+        "bid",
+        "ad set",
+        "scale"
+      ]
+    },
+    {
+      "id": "criativos",
+      "nome": "Criativos",
+      "curto": "Criativos",
+      "pt": [
+        "!criativo",
+        "!banner",
+        "!arte",
+        "imagem",
+        "carrossel",
+        "conceito",
+        "estatico",
+        "!calendario de conteudo",
+        "conteudo organico",
+        "postar",
+        "instagram",
+        "reels"
+      ],
+      "en": [
+        "!creative",
+        "thumbnail",
+        "ugc",
+        "hook",
+        "static"
+      ]
+    },
+    {
+      "id": "copy",
+      "nome": "Copy",
+      "curto": "Copy",
+      "pt": [
+        "!copy",
+        "!angulo",
+        "!headline",
+        "!advertorial",
+        "pagina de vendas",
+        "texto",
+        "e-mail",
+        "chamada",
+        "roteiro de venda"
+      ],
+      "en": [
+        "!copywriting",
+        "!angle",
+        "sales page",
+        "email",
+        "cta",
+        "script",
+        "sdr"
+      ]
+    },
+    {
+      "id": "pesquisa",
+      "nome": "Pesquisa",
+      "curto": "Pesquisa",
+      "pt": [
+        "!pesquisa",
+        "!pesquisar",
+        "!nicho",
+        "!concorrente",
+        "mercado",
+        "tendencia",
+        "em alta",
+        "mecanismo",
+        "espionar"
+      ],
+      "en": [
+        "!research",
+        "!competitor",
+        "market",
+        "trend",
+        "benchmark",
+        "spy",
+        "niche"
+      ]
+    },
+    {
+      "id": "oferta",
+      "nome": "Oferta e finanças",
+      "curto": "Oferta",
+      "pt": [
+        "!preco",
+        "!precificacao",
+        "!margem",
+        "!break-even",
+        "!garantia",
+        "bonus",
+        "caixa",
+        "financeiro",
+        "lucro",
+        "ticket",
+        "custo",
+        "quanto gastar",
+        "oferta",
+        "!oaas",
+        "!proposta",
+        "orcamento",
+        "ledger",
+        "por resultado",
+        "cobranca",
+        "fechar o mes"
+      ],
+      "en": [
+        "!pricing",
+        "!margin",
+        "price",
+        "profit",
+        "cash",
+        "offer",
+        "guarantee",
+        "sow"
+      ]
+    },
+    {
+      "id": "auditoria",
+      "nome": "Auditoria pré-lançamento",
+      "curto": "Auditoria",
+      "pt": [
+        "!auditoria",
+        "!pre-lancamento",
+        "lancar",
+        "lancamento",
+        "riscos",
+        "o que falta",
+        "pronto para lancar"
+      ],
+      "en": [
+        "!audit",
+        "!pre-launch",
+        "launch",
+        "go-live",
+        "risks",
+        "checklist"
+      ]
+    },
+    {
+      "id": "operacao",
+      "nome": "Operação",
+      "curto": "Operação",
+      "pt": [
+        "!suporte",
+        "!contratacao",
+        "!contratar",
+        "!processo",
+        "time",
+        "equipe",
+        "sop",
+        "atendimento",
+        "operacao",
+        "rotina",
+        "!n8n",
+        "!automacao",
+        "automatizar",
+        "workflow",
+        "vps"
+      ],
+      "en": [
+        "!hiring",
+        "!support",
+        "team",
+        "process",
+        "operations",
+        "onboarding",
+        "zapier",
+        "deploy"
+      ]
+    },
+    {
+      "id": "agentes",
+      "nome": "Agentes de venda",
+      "curto": "Agentes",
+      "pt": [
+        "!agente de venda",
+        "!agente sdr",
+        "!chatbot",
+        "agente",
+        "atendente virtual",
+        "fluxo de conversa",
+        "qualificar lead"
+      ],
+      "en": [
+        "!sales agent",
+        "!bot",
+        "agent",
+        "conversation flow",
+        "qualify lead"
+      ]
+    },
+    {
+      "id": "equity",
+      "nome": "Equity e private equity",
+      "curto": "Equity",
+      "pt": [
+        "!private equity",
+        "!valuation",
+        "aquisicao de empresa",
+        "due diligence",
+        "multiplo",
+        "ebitda",
+        "investimento"
+      ],
+      "en": [
+        "!equity",
+        "!m&a",
+        "cap table",
+        "multiple",
+        "investment",
+        "acquisition"
+      ]
+    }
+  ]
+}

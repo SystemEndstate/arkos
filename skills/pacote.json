@@ -1,0 +1,4826 @@
+{
+  "versao": "0.4.3",
+  "nota": "Curadoria: Harpa. Só MIT/Apache/BSD ou equivalentes, com LICENSE junto. Chaves de API nunca vão no pacote; 'custo' avisa quando a skill usa API paga.",
+  "skills": [
+    {
+      "nome": "arkos-br",
+      "modulos": [
+        "copy",
+        "criativos",
+        "design",
+        "seo",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-br"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-conversa",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "growth",
+        "oferta",
+        "operacao",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-conversa"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-banca-cetico",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-banca-cetico"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-banca-cliente",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-banca-cliente"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-banca-investidor",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-banca-investidor"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-banca-operador",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-banca-operador"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-diagnostico",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-diagnostico"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-financas",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-financas"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-gtm",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-gtm"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-ideia",
+      "modulos": [
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-ideia"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-modelo",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-modelo"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-preco",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-preco"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-premissas",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "operacao",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-premissas"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-produto",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-produto"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-relatorio",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-relatorio"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-estrategia-retro",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "operacao",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-estrategia-retro"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-gate",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "equity",
+        "growth",
+        "oferta",
+        "operacao",
+        "pesquisa",
+        "programacao",
+        "seo",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-gate"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-guarda-envio",
+      "modulos": [
+        "agentes",
+        "copy",
+        "growth"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-guarda-envio"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-guarda-escrita",
+      "modulos": [
+        "agentes",
+        "design",
+        "growth",
+        "oferta",
+        "operacao",
+        "programacao",
+        "trafego"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-guarda-escrita"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-intake",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "equity",
+        "growth",
+        "oferta",
+        "operacao",
+        "pesquisa",
+        "programacao",
+        "seo",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-intake"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-lead-merge",
+      "modulos": [
+        "agentes",
+        "copy",
+        "growth"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-lead-merge"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-mercado",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "growth",
+        "oferta",
+        "operacao",
+        "pesquisa",
+        "programacao",
+        "seo",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-mercado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-oaas-calculadora",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-oaas-calculadora"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-oaas-ledger",
+      "modulos": [
+        "copy",
+        "oferta",
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-oaas-ledger"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-oaas-proposta",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-oaas-proposta"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-oferta",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "growth",
+        "oferta",
+        "pesquisa",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-oferta"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-perfil",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "growth",
+        "oferta",
+        "operacao",
+        "pesquisa",
+        "programacao",
+        "seo",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-perfil"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-playbook",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-playbook"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-roteador",
+      "modulos": [
+        "growth",
+        "oferta",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-roteador"
+      },
+      "scanner_aceito": {
+        "Malicious Code": "scripts/roteador.py:108 só importa o arkos-decisor (skill irmã do pacote) de ~/.claude/skills; revisado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-scraper-nicho",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-scraper-nicho"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-site-gratis",
+      "modulos": [
+        "copy",
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-site-gratis"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-swipe",
+      "modulos": [
+        "copy",
+        "criativos",
+        "design",
+        "oferta",
+        "operacao",
+        "pesquisa",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-swipe"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ai-seo",
+      "modulos": [
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "73573e94a06a39965978b3fa1f9c1eace8cebc7c",
+        "caminho": "skills/ai-seo"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ai-visibility-audit",
+      "modulos": [
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "every-app/open-seo",
+        "commit": "672a66cef8106ab467bfcb84d9c4a28212958821",
+        "caminho": ".agents/skills/ai-visibility-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "banner-design",
+      "modulos": [
+        "criativos"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "2de1134dc4d1cfe112934611ae5803ae17a1bd7e",
+        "caminho": ".claude/skills/banner-design"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "brand",
+      "modulos": [
+        "design"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "2de1134dc4d1cfe112934611ae5803ae17a1bd7e",
+        "caminho": ".claude/skills/brand"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "competitive-landscape",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "every-app/open-seo",
+        "commit": "672a66cef8106ab467bfcb84d9c4a28212958821",
+        "caminho": ".agents/skills/competitive-landscape"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "competitor-analysis",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "every-app/open-seo",
+        "commit": "672a66cef8106ab467bfcb84d9c4a28212958821",
+        "caminho": ".agents/skills/competitor-analysis"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "design-system",
+      "modulos": [
+        "design"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "2de1134dc4d1cfe112934611ae5803ae17a1bd7e",
+        "caminho": ".claude/skills/design-system"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "design-taste-frontend",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "design",
+        "oferta",
+        "pesquisa",
+        "programacao",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "Leonxlnx/taste-skill",
+        "commit": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+        "caminho": "skills/taste-skill"
+      },
+      "scanner_aceito": {
+        "Hook Exploitation": "hook Stop roda scripts/gate.mjs da própria skill (gate de qualidade); revisado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "frontend-design",
+      "modulos": [
+        "design"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "vercel-labs/open-agents",
+        "commit": "cf865e94de7729751c747171785b6ce57e7b178c",
+        "caminho": ".agents/skills/frontend-design"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "higgsfield-generate",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "higgsfield-ai/skills",
+        "commit": "27000402070db19d958789d05b3b52b6f4718d7c",
+        "caminho": "higgsfield-generate"
+      },
+      "custo": "usa créditos Higgsfield (conta e chave do prestador)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "keyword-clustering",
+      "modulos": [
+        "copy",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "every-app/open-seo",
+        "commit": "672a66cef8106ab467bfcb84d9c4a28212958821",
+        "caminho": ".agents/skills/keyword-clustering"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "keyword-research",
+      "modulos": [
+        "copy",
+        "oferta",
+        "pesquisa",
+        "seo",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "every-app/open-seo",
+        "commit": "672a66cef8106ab467bfcb84d9c4a28212958821",
+        "caminho": ".agents/skills/keyword-research"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "local-seo",
+      "modulos": [
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "every-app/open-seo",
+        "commit": "672a66cef8106ab467bfcb84d9c4a28212958821",
+        "caminho": ".agents/skills/local-seo"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-audit",
+      "modulos": [
+        "auditoria",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "every-app/open-seo",
+        "commit": "672a66cef8106ab467bfcb84d9c4a28212958821",
+        "caminho": ".agents/skills/seo-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-cluster",
+      "modulos": [
+        "copy",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-cluster"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-competitor-pages",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-competitor-pages"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-content",
+      "modulos": [
+        "copy",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-content"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-content-brief",
+      "modulos": [
+        "copy",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-content-brief"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-geo",
+      "modulos": [
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-geo"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-local",
+      "modulos": [
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-local"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-plan",
+      "modulos": [
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-plan"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-schema",
+      "modulos": [
+        "copy",
+        "design",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-schema"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "seo-technical",
+      "modulos": [
+        "copy",
+        "design",
+        "seo"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-seo",
+        "commit": "468ed5b0d9e3249394783710e54abb02837e326b",
+        "caminho": "skills/seo-technical"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "slides",
+      "modulos": [
+        "copy",
+        "oferta",
+        "operacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "2de1134dc4d1cfe112934611ae5803ae17a1bd7e",
+        "caminho": ".claude/skills/slides"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ui-ux-pro-max",
+      "modulos": [
+        "design"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "2de1134dc4d1cfe112934611ae5803ae17a1bd7e",
+        "caminho": ".claude/skills/ui-ux-pro-max"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "account-health-check-meta-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "account-health-check-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "account-structure-audit-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "account-structure-audit-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "account-triage-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "account-triage-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ad-creative",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/ad-creative"
+      },
+      "custo": "Higgsfield (créditos)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "ad-creative-video",
+      "modulos": [
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "iart-ai/ad-video-skills",
+        "commit": "cc8071678f4225ee7bdccc4506f2468722bb3515",
+        "caminho": "skills/ad-creative-video"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ad-library-teardown",
+      "modulos": [
+        "copy",
+        "criativos",
+        "pesquisa",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/ad-library-teardown"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "advantage-plus-diagnosis-meta-ads",
+      "modulos": [
+        "design",
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "advantage-plus-diagnosis-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "anomaly-detection-google-ads",
+      "modulos": [
+        "operacao",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "anomaly-detection-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "api-auth-key-management",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "samber/developer-platform-skills",
+        "commit": "c042e5dc688e541c5078206dba695157d63961fa",
+        "caminho": "skills/api-auth-key-management"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "api-rate-limit-policy",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "samber/developer-platform-skills",
+        "commit": "c042e5dc688e541c5078206dba695157d63961fa",
+        "caminho": "skills/api-rate-limit-policy"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "attribution-credit-check-meta-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "attribution-credit-check-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "attribution-window-sanity-check",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "attribution-window-sanity-check"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "audience-growth-tracker-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/audience-growth-tracker-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "audience-overlap-review-meta-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "audience-overlap-review-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "audience-research",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/audience-research"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "baoyu-youtube-transcript",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "jimliu/baoyu-skills",
+        "commit": "bf1ff076e25f8da4a339eb1c8cf03361fea5ea4c",
+        "caminho": "skills/baoyu-youtube-transcript"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "bidding-strategy-sanity-check-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "bidding-strategy-sanity-check-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "brand-intake",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "brand-intake"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "budget-reallocation-planner-meta-ads",
+      "modulos": [
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "budget-reallocation-planner-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "campaign-margin-check-meta-ads",
+      "modulos": [
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "campaign-margin-check-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "campaign-structure-audit-meta-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "campaign-structure-audit-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "caption-writer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/caption-writer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "carousel-writer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/carousel-writer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "chunking-strategy",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "giuseppe-trisciuoglio/developer-kit",
+        "commit": "fe73fb33a09ee6562eeec7415a3f9a3bcf795177",
+        "caminho": "plugins/developer-kit-ai/skills/chunking-strategy"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "click-id-and-utm-sanitization-check",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "click-id-and-utm-sanitization-check"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "click-to-session-gap-meta-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "click-to-session-gap-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "cloudflare-pages",
+      "modulos": [
+        "copy",
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "bagelhole/devops-security-agent-skills",
+        "commit": "0365f57a079b1332f95cf26e31dd2d5332a8399f",
+        "caminho": "infrastructure/cloudflare/cloudflare-pages"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "cold-email",
+      "modulos": [
+        "copy",
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/cold-email"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "cold-outbound-sequencer",
+      "modulos": [
+        "copy",
+        "growth"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "email/deliver/cold-outbound-sequencer"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "comment-mining",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/shared/comment-mining"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "comment-objection-mining-meta-ads",
+      "modulos": [
+        "agentes",
+        "copy",
+        "growth",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "comment-objection-mining-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "community-launch-runner",
+      "modulos": [
+        "copy",
+        "criativos",
+        "growth",
+        "pesquisa",
+        "video"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "launch/mobilize/community-launch-runner"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "community-marketing",
+      "modulos": [
+        "copy",
+        "criativos",
+        "growth",
+        "pesquisa",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/community-marketing"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "company-research",
+      "modulos": [
+        "growth",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "exa-labs/agent-skills",
+        "commit": "9d220cc035f17bc01ca707ffae4ea1114af081fd",
+        "caminho": "skills/company-research"
+      },
+      "custo": "esta skill pode usar serviço pago: Exa (API paga por consulta; precisa de EXA_API_KEY). Antes de rodar, avise o usuário o que precisa (conta, chave, créditos) e",
+      "acesso": "todos"
+    },
+    {
+      "nome": "competitor-benchmark-auction-insights-google-ads",
+      "modulos": [
+        "pesquisa",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "competitor-benchmark-auction-insights-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "competitor-social-research",
+      "modulos": [
+        "copy",
+        "criativos",
+        "pesquisa",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/competitor-social-research"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "consent-mode-impact-review",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "consent-mode-impact-review"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "content-calendar-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/content-calendar-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "content-pattern-analyzer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/content-pattern-analyzer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "content-repurposer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/content-repurposer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "content-repurposing",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/content-repurposing"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "content-strategy-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/content-strategy-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "conversion-deduplication-review",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "conversion-deduplication-review"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "conversion-lag-read-meta-ads",
+      "modulos": [
+        "operacao",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "conversion-lag-read-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "conversion-tracking-audit-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "conversion-tracking-audit-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "copy-editing",
+      "modulos": [
+        "copy"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/copy-editing"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "copywriting",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "oferta",
+        "pesquisa",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/copywriting"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "cpa-spike-diagnosis-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "cpa-spike-diagnosis-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "creative-fatigue-review-meta-ads",
+      "modulos": [
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "creative-fatigue-review-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "creative-mechanics",
+      "modulos": [
+        "copy",
+        "criativos",
+        "pesquisa",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "creative-mechanics"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "creative-strategy-engine",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "creative-strategy-engine"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "creator-profile-teardown",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/creator-profile-teardown"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "customer-research",
+      "modulos": [
+        "growth",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/customer-research"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "duplicate-event-finder",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "duplicate-event-finder"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "enhanced-conversions-readiness-check",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "enhanced-conversions-readiness-check"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ga4-event-quality-audit",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "ga4-event-quality-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "google-ads-conversion-tracking-audit",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "google-ads-conversion-tracking-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "gtm-container-health-check",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "gtm-container-health-check"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "hook-tactics",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "hook-tactics"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "hook-voice-patterns",
+      "modulos": [
+        "copy",
+        "criativos",
+        "pesquisa",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "hook-voice-patterns"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "hook-writer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/hook-writer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "hook-writing",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "hook-writing"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "impression-share-gap-finder-google-ads",
+      "modulos": [
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "impression-share-gap-finder-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "incrementality-test-design-meta-ads",
+      "modulos": [
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "incrementality-test-design-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "influencer-discovery",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "influencer/scout/influencer-discovery"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "influencer-prospecting",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/influencer-prospecting"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "instagram-carousel",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "jeevanbavandla/instagram-carousel-skill",
+        "commit": "243ba08eca1f139369ee3858d8ac00ba09bd8d8d",
+        "caminho": "instagram-carousel"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ios-privacy-signal-loss-review",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "ios-privacy-signal-loss-review"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "ios-reporting-gap-meta-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "ios-reporting-gap-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "job-posting-intent",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/shared/job-posting-intent"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "landing-page-match-scorer-google-ads",
+      "modulos": [
+        "copy",
+        "design",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "landing-page-match-scorer-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "launch-video",
+      "modulos": [
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "iart-ai/ad-video-skills",
+        "commit": "cc8071678f4225ee7bdccc4506f2468722bb3515",
+        "caminho": "skills/launch-video"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "lead-generation",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "exa-labs/agent-skills",
+        "commit": "9d220cc035f17bc01ca707ffae4ea1114af081fd",
+        "caminho": "skills/lead-generation"
+      },
+      "custo": "esta skill pode usar serviço pago: Exa (API paga por consulta; precisa de EXA_API_KEY). Antes de rodar, avise o usuário o que precisa (conta, chave, créditos) e",
+      "acesso": "todos"
+    },
+    {
+      "nome": "lead-qualification",
+      "modulos": [
+        "agentes",
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/shared/lead-qualification"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "learning-phase-check-meta-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "learning-phase-check-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "lgpd-audit",
+      "modulos": [
+        "auditoria",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "goul4rt/lgpd-skills",
+        "commit": "65e625daf56f84a2c8d9b8b063d1d70481abba3d",
+        "caminho": "skills/lgpd-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "lgpd-privacy-policy",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "goul4rt/lgpd-skills",
+        "commit": "65e625daf56f84a2c8d9b8b063d1d70481abba3d",
+        "caminho": "skills/lgpd-privacy-policy"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "logo-design",
+      "modulos": [
+        "auditoria",
+        "design",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "kaankiziltug/logo-design-skill",
+        "commit": "e9eaddc07895575253d6663320354a708f53e955",
+        "caminho": "skills/logo-design"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "lookalike-source-review-meta-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "lookalike-source-review-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "marketing-psychology",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/marketing-psychology"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "meta-pixel-capi-signal-quality-audit",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "meta-pixel-capi-signal-quality-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "modeled-conversions-review-meta-ads",
+      "modulos": [
+        "operacao",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "modeled-conversions-review-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "offer-angle-extraction-meta-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "offer-angle-extraction-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "offers",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/offers"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "offline-conversion-import-audit",
+      "modulos": [
+        "agentes",
+        "growth",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "offline-conversion-import-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "offline-conversion-import-audit-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "offline-conversion-import-audit-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "offsite-signal-analyzer",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "seo-geo/evaluate/offsite-signal-analyzer"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "optimization-advisor-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/optimization-advisor-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "outlier-post-finder",
+      "modulos": [
+        "copy",
+        "criativos",
+        "pesquisa",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/outlier-post-finder"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "outreach-manager",
+      "modulos": [
+        "agentes",
+        "copy",
+        "growth"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "influencer/activate/outreach-manager"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "performance-analyzer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/performance-analyzer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "pgvector-semantic-search",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "timescale/pg-aiguide",
+        "commit": "1aef6e452b97fae580d57677a807fd0d601ddc7b",
+        "caminho": "skills/pgvector-semantic-search"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "pixel-capi-signal-quality-audit-meta-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "pixel-capi-signal-quality-audit-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "placement-breakdown-review-meta-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "placement-breakdown-review-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "platform-strategy-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "growth",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/platform-strategy-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "pmax-performance-diagnosis-google-ads",
+      "modulos": [
+        "design",
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "pmax-performance-diagnosis-google-ads"
+      },
+      "ajustes": "skills/ajustes/pmax-performance-diagnosis-google-ads.json",
+      "acesso": "todos"
+    },
+    {
+      "nome": "post-writer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "growth",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/post-writer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "postgres-hybrid-text-search",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "timescale/pg-aiguide",
+        "commit": "1aef6e452b97fae580d57677a807fd0d601ddc7b",
+        "caminho": "skills/postgres-hybrid-text-search"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "product-demand-research",
+      "modulos": [
+        "growth",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/product-demand-research"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "product-marketing",
+      "modulos": [
+        "oferta",
+        "operacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/product-marketing"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "prospecting",
+      "modulos": [
+        "copy",
+        "growth",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/prospecting"
+      },
+      "custo": "Apify (cobra por uso)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "python-mcp-server-generator",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "github/awesome-copilot",
+        "commit": "f10fdb8b2660ce85c98f220b2f1ca24653768a5c",
+        "caminho": "skills/python-mcp-server-generator"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "qdrant-performance-optimization",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "qdrant/skills",
+        "commit": "e80a4d52201fb68ba3163f608f41e228d65fdff3",
+        "caminho": "skills/qdrant-performance-optimization"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "qdrant-search-quality",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "qdrant/skills",
+        "commit": "e80a4d52201fb68ba3163f608f41e228d65fdff3",
+        "caminho": "skills/qdrant-search-quality"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "quality-score-analysis-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "quality-score-analysis-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "reddit-insights",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "lignertys/reddit-research-skills",
+        "commit": "c79e3a3a0dc7d0d6d413fbdb50e706debfa062ec",
+        "caminho": "skills/reddit-insights"
+      },
+      "custo": "esta skill pode usar serviço pago: reddapi.dev (precisa de REDDAPI_API_KEY; tem plano pago). Antes de rodar, avise o usuário o que precisa (conta, chave, crédit",
+      "scanner_aceito": {
+        "Prompt Injection": "o SKILL.md cita 'ignore previous instructions' para mandar tratar texto do Reddit como dado; revisado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "reddit-leads",
+      "modulos": [
+        "growth",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "lignertys/reddit-research-skills",
+        "commit": "c79e3a3a0dc7d0d6d413fbdb50e706debfa062ec",
+        "caminho": "skills/reddit-leads"
+      },
+      "custo": "esta skill pode usar serviço pago: reddapi.dev (precisa de REDDAPI_API_KEY; tem plano pago). Antes de rodar, avise o usuário o que precisa (conta, chave, crédit",
+      "acesso": "todos"
+    },
+    {
+      "nome": "reddit-post-finder",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/shared/reddit-post-finder"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "reddit-research",
+      "modulos": [
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "lignertys/reddit-research-skills",
+        "commit": "c79e3a3a0dc7d0d6d413fbdb50e706debfa062ec",
+        "caminho": "skills/reddit-research"
+      },
+      "custo": "esta skill pode usar serviço pago: reddapi.dev (precisa de REDDAPI_API_KEY; tem plano pago). Antes de rodar, avise o usuário o que precisa (conta, chave, crédit",
+      "scanner_aceito": {
+        "Prompt Injection": "o SKILL.md cita 'ignore previous instructions' para mandar tratar texto do Reddit como dado; revisado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "reddit-search-api",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "lignertys/reddit-research-skills",
+        "commit": "c79e3a3a0dc7d0d6d413fbdb50e706debfa062ec",
+        "caminho": "skills/reddit-search-api"
+      },
+      "custo": "esta skill pode usar serviço pago: reddapi.dev (precisa de REDDAPI_API_KEY; tem plano pago). Antes de rodar, avise o usuário o que precisa (conta, chave, crédit",
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-audience",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-audience"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-audience-account-sourcing",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-audience-account-sourcing"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-audience-fit-definition",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-audience-fit-definition"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-audience-people-and-contacts",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-audience-people-and-contacts"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-audience-score-segment-qa",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-audience-score-segment-qa"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-audience-segment-pass",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-audience-segment-pass"
+      },
+      "custo": "GooseWorks (cobra por uso)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-audience-signals-and-hooks",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-audience-signals-and-hooks"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "research-market-listening",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/research-market-listening"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "reverse-engineer-marketing",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+        "caminho": "skills/reverse-engineer-marketing"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "review-audit",
+      "modulos": [
+        "copy",
+        "criativos",
+        "oferta",
+        "pesquisa",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "review-audit"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "roas-forecast-scenarios-google-ads",
+      "modulos": [
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "roas-forecast-scenarios-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "rsa-ad-copy-generator-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "rsa-ad-copy-generator-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "rsa-ad-copy-review-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "rsa-ad-copy-review-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "run-organic-social",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/run-organic-social"
+      },
+      "custo": "GooseWorks (cobra por uso)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "run-organic-social-account-audit",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/run-organic-social-account-audit"
+      },
+      "custo": "GooseWorks (cobra por uso)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "run-organic-social-plan-calendar",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/run-organic-social-plan-calendar"
+      },
+      "custo": "GooseWorks (cobra por uso)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "run-organic-social-platform-research",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/run-organic-social-platform-research"
+      },
+      "custo": "esta skill pode usar serviço pago: Apify / GooseWorks (cobram por uso; precisa de conta e token). Antes de rodar, avise o usuário o que precisa (conta, chave, c",
+      "acesso": "todos"
+    },
+    {
+      "nome": "run-organic-social-post-check",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/run-organic-social-post-check"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "scaling-planner-google-ads",
+      "modulos": [
+        "oferta",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "scaling-planner-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "scrapecreators-api",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/shared/scrapecreators-api"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "search-terms-hygiene-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "search-terms-hygiene-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "server-side-tagging-feasibility-review",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "server-side-tagging-feasibility-review"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "social-calendar-builder",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "social/craft/social-calendar-builder"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "social-listening-brief",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/social-listening-brief"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "social-media-context-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/social-media-context-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "social-pulse-monitor",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "social/observe/social-pulse-monitor"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "social-quality-auditor",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "social/host/social-quality-auditor"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "social-selling-planner",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "aaron-he-zhu/aaron-marketing-skills",
+        "commit": "d95e536ea055019a595ff6325667b0f77e7999f3",
+        "caminho": "social/host/social-selling-planner"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "testimonial-video",
+      "modulos": [
+        "copy",
+        "criativos",
+        "oferta",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "iart-ai/ad-video-skills",
+        "commit": "cc8071678f4225ee7bdccc4506f2468722bb3515",
+        "caminho": "skills/testimonial-video"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "thread-writer-sms",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "blacktwist/social-media-skills",
+        "commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+        "caminho": "skills/thread-writer-sms"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "transcript-intelligence",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/shared/transcript-intelligence"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "trend-discovery",
+      "modulos": [
+        "copy",
+        "criativos",
+        "oferta",
+        "pesquisa",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/trend-discovery"
+      },
+      "custo": "esta skill usa a API paga da ScrapeCreators (cobra por crédito). Antes de rodar, avise o usuário: é preciso criar conta em scrapecreators.com, gerar uma API key",
+      "acesso": "todos"
+    },
+    {
+      "nome": "typescript-mcp-server-generator",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "github/awesome-copilot",
+        "commit": "f10fdb8b2660ce85c98f220b2f1ca24653768a5c",
+        "caminho": "skills/typescript-mcp-server-generator"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "visual-formats",
+      "modulos": [
+        "copy",
+        "criativos",
+        "pesquisa",
+        "trafego",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "motion-team/creative-strategy-skills",
+        "commit": "8e467a3547dcd2118e4d08fa58099553677d52ff",
+        "caminho": "visual-formats"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "wasted-spend-finder-google-ads",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "wasted-spend-finder-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "weekly-operator-digest-google-ads",
+      "modulos": [
+        "operacao",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/google-ads-skills",
+        "commit": "b5228cb525065ead2c3e07ee2bf44ea8a95358e3",
+        "caminho": "weekly-operator-digest-google-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "weekly-performance-readout-meta-ads",
+      "modulos": [
+        "operacao",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/meta-ads-skills",
+        "commit": "388095b033279078df89dd526f44629201cc0bce",
+        "caminho": "weekly-performance-readout-meta-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "weekly-tracking-signal-readout",
+      "modulos": [
+        "operacao",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mardab96/gtm-tracking-claude-skills",
+        "commit": "4b4f844805cdd967f3493a72202554f4552cbf12",
+        "caminho": "weekly-tracking-signal-readout"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "write-outreach",
+      "modulos": [
+        "agentes",
+        "copy",
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/write-outreach"
+      },
+      "custo": "GooseWorks (cobra por uso)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "write-outreach-draft-sequence",
+      "modulos": [
+        "copy",
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/write-outreach-draft-sequence"
+      },
+      "custo": "GooseWorks (cobra por uso)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "write-outreach-outreach-qa",
+      "modulos": [
+        "copy",
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/write-outreach-outreach-qa"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "write-outreach-reply-reader",
+      "modulos": [
+        "agentes",
+        "copy",
+        "growth"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "gooseworks-ai/goose-skills",
+        "commit": "885edb542d6e4e526d4a9ad2844a3771be248810",
+        "caminho": "skills/marketing/write-outreach-reply-reader"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "mobile-native",
+      "modulos": [
+        "design"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "emilkowalski/skills",
+        "commit": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
+        "caminho": "skills/mobile-native"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "emil-design-eng",
+      "modulos": [
+        "copy",
+        "design",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "emilkowalski/skills",
+        "commit": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
+        "caminho": "skills/emil-design-eng"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "break-ui",
+      "modulos": [
+        "design"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "emilkowalski/skills",
+        "commit": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
+        "caminho": "skills/break-ui"
+      },
+      "scanner_aceito": {
+        "Prompt Injection": "SKILL.md:36 manda tratar o conteúdo do repo como dado; revisado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "animate",
+      "modulos": [
+        "design"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "emilkowalski/skills",
+        "commit": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
+        "caminho": "skills/animate"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "hyperframes",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "heygen-com/hyperframes",
+        "commit": "84ff7d71c28798538f33be2009d51dc22fae9794",
+        "caminho": "skills/hyperframes"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "real-sound",
+      "modulos": [
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "Leonxlnx/earshot",
+        "commit": "7a7f7c5c70d4a763a1eca4b3666af7c77e313f97",
+        "caminho": "skills/real-sound"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "explainer-default",
+      "modulos": [
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "Barty-Bart/motion-graphics",
+        "commit": "3d83d987d658601d8a1269eb691622bdcd427335",
+        "caminho": "skills/explainer-default"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "earshot",
+      "modulos": [
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "Leonxlnx/earshot",
+        "commit": "7a7f7c5c70d4a763a1eca4b3666af7c77e313f97",
+        "caminho": "skills/earshot"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "motion-broll",
+      "modulos": [
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "Barty-Bart/motion-graphics",
+        "commit": "3d83d987d658601d8a1269eb691622bdcd427335",
+        "caminho": "skills/motion-broll"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "headline-formulas",
+      "modulos": [
+        "copy",
+        "criativos",
+        "design",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "guia-matthieu/clawfu-skills",
+        "commit": "4108f5c010ccaa8b5707fa05ca1d888ae167e548",
+        "caminho": "skills/content/headline-formulas"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "antislop",
+      "modulos": [
+        "copy",
+        "criativos",
+        "design",
+        "oferta",
+        "seo",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "miqdadbadjuber/anti-slop",
+        "commit": "7f6a03df2931c12cb244dc4ab14ee4866b0ac2ba",
+        "caminho": "skills/antislop"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "humanizer-pt-br",
+      "modulos": [
+        "copy",
+        "criativos",
+        "design",
+        "oferta",
+        "seo",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "mackswendhell/humanizer-pt-br",
+        "commit": "ada3599ae2732725585f1d93770eeae98c922ff0",
+        "caminho": ""
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "chatbot-flow-design",
+      "modulos": [
+        "agentes"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "rampstackco/claude-skills",
+        "commit": "9d281db6e7a5c4a0084ba89c91633a07f5f7e42b",
+        "caminho": "skills/chatbot-flow-design"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "first-customer-finder",
+      "modulos": [
+        "growth",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "Kappaemme-git/codex-first-customer-finder-skill",
+        "commit": "d3f6964bd989745ac183edbd545c588a68451146",
+        "caminho": "first-customer-finder"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "mechanism-ideation",
+      "modulos": [
+        "copy",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coleschaffer/copywritingskills-rmbc",
+        "commit": "8327d49b8232a85b39efb4dbd5b9855b5de51e68",
+        "caminho": "skills/mechanism-ideation"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "competitor-offer-analysis",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coleschaffer/dtc-copywriting-skills",
+        "commit": "57cd5a77b8bf0c60b3e565f20d2c306d5803e65d",
+        "caminho": "skills/competitor-offer-analysis"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "hundred-million-offers",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "wondelai/skills",
+        "commit": "c37678106e63ef1c5472d848fb3d8b8c5b33fafe",
+        "caminho": "hundred-million-offers"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "deliver-acceptance-criteria",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "product-on-purpose/pm-skills",
+        "commit": "3456e5e309f38ac2a66943f20d4aaf8031268dfb",
+        "caminho": "skills/deliver-acceptance-criteria"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "review-proposals",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "anthropics/claude-for-legal",
+        "commit": "4a6c651889c97cc9140580363c73e0eb17379c2b",
+        "caminho": "commercial-legal/skills/review-proposals"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "deal-desk",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "alirezarezvani/claude-skills",
+        "commit": "5909a72e62b5fbb809935fb6a55b58bdbe175074",
+        "caminho": "commercial/skills/deal-desk"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "sow-generator",
+      "modulos": [
+        "oferta"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "OneWave-AI/claude-skills",
+        "commit": "b2267d9171af4f56848d82992381b20b89b44056",
+        "caminho": "sow-generator"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "hook-battery",
+      "modulos": [
+        "criativos",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coleschaffer/dtc-copywriting-skills",
+        "commit": "57cd5a77b8bf0c60b3e565f20d2c306d5803e65d",
+        "caminho": "skills/hook-battery"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "sound-effects",
+      "modulos": [
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "Barty-Bart/motion-graphics",
+        "commit": "3d83d987d658601d8a1269eb691622bdcd427335",
+        "caminho": "skills/sound-effects"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "n8n-workflow-patterns",
+      "modulos": [
+        "agentes",
+        "growth",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "czlonkowski/n8n-skills",
+        "commit": "ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5",
+        "caminho": "skills/n8n-workflow-patterns"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "n8n-node-configuration",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "czlonkowski/n8n-skills",
+        "commit": "ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5",
+        "caminho": "skills/n8n-node-configuration"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "n8n-validation-expert",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "czlonkowski/n8n-skills",
+        "commit": "ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5",
+        "caminho": "skills/n8n-validation-expert"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "n8n-mcp-tools-expert",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "czlonkowski/n8n-skills",
+        "commit": "ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5",
+        "caminho": "skills/n8n-mcp-tools-expert"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "impeccable",
+      "modulos": [
+        "copy",
+        "design",
+        "programacao"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "pbakaus/impeccable",
+        "commit": "b49177d32788f2dc585c42831d845dacf1ebed2c",
+        "caminho": ".claude/skills/impeccable"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "central-ciber",
+      "modulos": [
+        "auditoria",
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "SystemEndstate/central-ciber",
+        "commit": "541177a3d9a2d181884c710d0524c014a07d6ed3",
+        "caminho": ""
+      },
+      "scanner_aceito": {
+        "Malicious Code": "scripts/install.py escreve hooks em ~/.claude/settings.json só se o prestador rodar o instalador da skill; o sync só copia; revisado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "analytics-tracking",
+      "modulos": [
+        "copy",
+        "criativos",
+        "design",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/analytics-tracking"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "email-sequence",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/email-sequence"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "launch-strategy",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/launch-strategy"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "onboarding-cro",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/onboarding-cro"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "page-cro",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "oferta",
+        "pesquisa",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/page-cro"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "paid-ads",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "criativos",
+        "design",
+        "oferta",
+        "pesquisa",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/paid-ads"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "pricing-strategy",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/pricing-strategy"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "signup-flow-cro",
+      "modulos": [
+        "auditoria",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/signup-flow-cro"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "social-content",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "criativos",
+        "oferta",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coreyhaines31/marketingskills",
+        "commit": "e4283c6616bdb3bfcbbb3bb605289c03c9635130",
+        "caminho": "skills/social-content"
+      },
+      "nota": "commit anterior ao rename v2.0 do repo (o nome usado nos playbooks)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "claude-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "AgriciDaniel/claude-ads",
+        "commit": "fc3908e786c318776df89a3a098333da377364be",
+        "caminho": "ads"
+      },
+      "nota": "no repo a skill se chama 'ads'; instalada na pasta claude-ads",
+      "acesso": "todos"
+    },
+    {
+      "nome": "rmbc",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta",
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "coleschaffer/copywritingskills-rmbc",
+        "commit": "8327d49b8232a85b39efb4dbd5b9855b5de51e68",
+        "caminho": "skills/rmbc-context"
+      },
+      "nota": "hub rmbc-context do método RMBC; instalada na pasta rmbc",
+      "acesso": "todos"
+    },
+    {
+      "nome": "docker",
+      "modulos": [
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "affaan-m/ECC",
+        "commit": "4adeee6732a12d1540f49a4d50a38ce8c97f9a53",
+        "caminho": "skills/docker-patterns"
+      },
+      "nota": "docker-patterns do everything-claude-code; instalada na pasta docker",
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-acessos",
+      "modulos": [
+        "oferta",
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-acessos"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-atualizar",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-atualizar"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-escala",
+      "modulos": [
+        "trafego"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-escala"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-kwai-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-kwai-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-licenca",
+      "modulos": [
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-licenca"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-mecanismo",
+      "modulos": [
+        "copy",
+        "criativos",
+        "oferta",
+        "pesquisa",
+        "trafego"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-mecanismo"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-monitor",
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-monitor"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-motor-organico",
+      "modulos": [
+        "copy",
+        "criativos",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-motor-organico"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-notas",
+      "modulos": [
+        "auditoria"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-notas"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-outbound-eua",
+      "modulos": [
+        "copy",
+        "growth"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-outbound-eua"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-painel",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta",
+        "operacao",
+        "trafego"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-painel"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-passagem",
+      "modulos": [
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-passagem"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-revisao",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-revisao"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-sop",
+      "modulos": [
+        "oferta",
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-sop"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-suporte",
+      "modulos": [
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-suporte"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-tiktok-ads",
+      "modulos": [
+        "copy",
+        "criativos",
+        "trafego",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-tiktok-ads"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-artes",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-artes"
+      },
+      "modulos": [
+        "copy",
+        "criativos",
+        "oferta",
+        "trafego",
+        "video"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-docx",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-docx"
+      },
+      "modulos": [
+        "equity",
+        "oferta",
+        "operacao"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-pdf",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-pdf"
+      },
+      "modulos": [
+        "design",
+        "oferta",
+        "operacao",
+        "programacao"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-pptx",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-pptx"
+      },
+      "modulos": [
+        "oferta",
+        "operacao"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-site",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-site"
+      },
+      "modulos": [
+        "copy",
+        "design"
+      ],
+      "scanner_aceito": {
+        "Malicious Code": "scripts/site_arkos.py só LÊ ~/.claude/skills/design-taste-frontend (kit da taste-skill); revisado"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-xlsx",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-xlsx"
+      },
+      "modulos": [
+        "equity",
+        "oferta",
+        "operacao",
+        "trafego"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-decisor",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "equity",
+        "growth",
+        "oferta",
+        "operacao",
+        "programacao",
+        "trafego"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-decisor"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-engenharia-reversa",
+      "modulos": [
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-engenharia-reversa"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-impacto",
+      "modulos": [
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-impacto"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-instagram",
+      "modulos": [
+        "agentes",
+        "auditoria",
+        "copy",
+        "criativos",
+        "oferta",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-instagram"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-pesquisa",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "oferta",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-pesquisa"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-prospeccao-local",
+      "modulos": [
+        "growth"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-prospeccao-local"
+      },
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-gate-rag",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-gate-rag"
+      },
+      "substitui": "clarity-gate",
+      "dependencias": "",
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-cold-outbound",
+      "modulos": [
+        "agentes",
+        "copy",
+        "growth",
+        "pesquisa"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-cold-outbound"
+      },
+      "substitui": "coldoutbound",
+      "dependencias": "importa canspam.py da pasta irmã arkos-outbound-eua (vai junto no pacote)",
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-regressao",
+      "modulos": [
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-regressao"
+      },
+      "substitui": "guarda-regressao",
+      "dependencias": "pytest (MIT) em repo Python",
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-transcrever",
+      "modulos": [
+        "criativos",
+        "operacao",
+        "programacao",
+        "video"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-transcrever"
+      },
+      "substitui": "whisper-transcribe",
+      "dependencias": "faster-whisper (MIT) + av>=11,<16 (BSD); baixa o modelo Whisper (MIT) na 1ª vez",
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-grafo",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-grafo"
+      },
+      "modulos": [
+        "design",
+        "programacao"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-portal",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-portal"
+      },
+      "modulos": [
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-scanner",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-scanner"
+      },
+      "modulos": [
+        "operacao",
+        "programacao"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-vps",
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-vps"
+      },
+      "modulos": [
+        "copy",
+        "design",
+        "operacao",
+        "programacao"
+      ],
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-garimpo-x",
+      "modulos": [
+        "growth",
+        "oferta",
+        "operacao"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-garimpo-x"
+      },
+      "custo": "Oxylabs (Google site:x.com) e Apify (x.py); chaves do prestador via _tools/chaves.py",
+      "acesso": "todos"
+    },
+    {
+      "nome": "arkos-garimpo-instagram",
+      "modulos": [
+        "growth",
+        "oferta",
+        "trafego",
+        "design"
+      ],
+      "licenca": "ARKOS (própria)",
+      "fonte": {
+        "tipo": "repo",
+        "caminho": "skills/arkos/arkos-garimpo-instagram"
+      },
+      "custo": "Apify (perfis e comentários, por resultado) e Oxylabs (Google + Biblioteca de Anúncios); mostra estimativa e pede --confirmar-custo",
+      "acesso": "todos"
+    },
+    {
+      "nome": "apify-google-maps-leads",
+      "modulos": [
+        "growth",
+        "pesquisa"
+      ],
+      "licenca": "Apache-2.0",
+      "fonte": {
+        "tipo": "github",
+        "repo": "apify/awesome-skills",
+        "commit": "851fdfd7d4fe2ba36a9f48048ced4299a8e0512b",
+        "caminho": "skills/apify-google-maps-leads"
+      },
+      "ajustes": "skills/ajustes/apify-google-maps-leads.json",
+      "custo": "Apify (atores pagos por resultado: Google Maps, enriquecimento de contatos, Scalelist); precisa de conta Apify e do Apify CLI ou MCP; a skill pede confirmação acima de 200 leads",
+      "acesso": "todos"
+    },
+    {
+      "nome": "sc-scrapecreators-api",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/scrapecreators-api"
+      },
+      "ajustes": "skills/ajustes/sc-scrapecreators-api.json",
+      "custo": "API paga da ScrapeCreators (1 crédito por chamada na maioria; alguns endpoints 10-26 créditos); conta e chave em scrapecreators.com, avisar o usuário antes",
+      "escolha": "Guia completo da API (291 linhas): rota por intenção para 27+ plataformas, tabela de custo em créditos (ex.: audiência TikTok 26, anúncios Google com detalhe 25), paginação, parâmetros comuns, limites e TikTok Shop/link-in-bio. A scrapecreators-api (gooseworks) é o contrato curto de coleta usado como dependência por outras skills: prefira esta quando for montar a chamada certa ou estimar custo.",
+      "sobrepoe": "scrapecreators-api",
+      "acesso": "todos"
+    },
+    {
+      "nome": "sc-comment-mining",
+      "modulos": [
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/comment-mining"
+      },
+      "ajustes": "skills/ajustes/sc-comment-mining.json",
+      "custo": "API paga da ScrapeCreators (1 crédito por chamada na maioria; alguns endpoints 10-26 créditos); conta e chave em scrapecreators.com, avisar o usuário antes",
+      "escolha": "Relatório pronto de mineração de comentários: resumo, temas, perguntas, objeções, sinais de compra, frases exatas para reaproveitar, ideias de conteúdo, guardrails e armadilhas. A comment-mining (gooseworks, 35 linhas) é o passo curto de coleta e classificação usado dentro de outros fluxos: prefira esta quando o usuário quer o relatório de voz do cliente como entrega final.",
+      "sobrepoe": "comment-mining",
+      "acesso": "todos"
+    },
+    {
+      "nome": "sc-transcript-intelligence",
+      "modulos": [
+        "pesquisa",
+        "video",
+        "copy"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "ScrapeCreators/social-media-research-skills",
+        "commit": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+        "caminho": "skills/transcript-intelligence"
+      },
+      "ajustes": "skills/ajustes/sc-transcript-intelligence.json",
+      "custo": "API paga da ScrapeCreators (1 crédito por chamada na maioria; alguns endpoints 10-26 créditos); conta e chave em scrapecreators.com, avisar o usuário antes",
+      "escolha": "Relatório pronto de transcrições: TL;DR, nota por vídeo, padrões do conjunto, swipe file de ganchos e ideias de reaproveitamento. A transcript-intelligence (gooseworks) devolve átomos com timestamp (ganchos, claims, prova, CTA, patrocínio) para alimentar outra skill: prefira esta quando a entrega final é a análise de um conjunto de vídeos.",
+      "sobrepoe": "transcript-intelligence",
+      "acesso": "todos"
+    },
+    {
+      "nome": "ad-spy",
+      "modulos": [
+        "trafego",
+        "criativos",
+        "pesquisa"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "graphed-inc/marketing-skills",
+        "commit": "ea5a17dc816faa1fc919bc3579124b1acbdddeeb",
+        "caminho": "skills/ad-spy"
+      },
+      "custo": "publica um app na plataforma Graphed e cobra em créditos Graphed: Gemini 2.5 Flash (via proxy OpenRouter da Graphed) analisando cada anúncio + ScrapeCreators/Exa para as bibliotecas de anúncio e comentários + coleta diária por cron; precisa de conta Graphed (`npm i -g @graphed-inc/cli`, `graphed login`). Avisar o usuário antes de publicar",
+      "escolha": "Monitoramento CONTÍNUO de concorrentes (coleta diária das bibliotecas Meta/Google/LinkedIn, mídia guardada, Gemini marca gancho/ângulo/oferta) + mapa de lacunas de posicionamento persona × dor. A ad-library-teardown faz o teardown pontual, sem app nem custo fixo: use ela para uma análise única.",
+      "acesso": "todos"
+    },
+    {
+      "nome": "ffmpeg-skill",
+      "modulos": [
+        "video"
+      ],
+      "licenca": "MIT",
+      "fonte": {
+        "tipo": "github",
+        "repo": "kajisho5/ffmpeg-skill",
+        "commit": "c559cb5fcbfbb37b8a48165b0c49e6bdfa674883",
+        "caminho": ""
+      },
+      "escolha": "Edição local com FFmpeg (corte, junção, reenquadrar 9:16, velocidade, legenda, sobreposição, tirar silêncio, sincronia, loudness, HDR→SDR, exportação por plataforma). Sem API paga; precisa do ffmpeg no PATH. Instalação grande (~64 MB: docs, demos e site vêm junto).",
+      "acesso": "todos"
+    }
+  ],
+  "fora": [
+    {
+      "nome": "antecipar-impacto",
+      "modulos": [
+        "programacao"
+      ],
+      "motivo": "fonte não encontrada (sem clone de scan nem lock): ver à mão"
+    },
+    {
+      "nome": "clarity-gate",
+      "modulos": [
+        "pesquisa"
+      ],
+      "motivo": "fonte não encontrada (sem clone de scan nem lock): ver à mão"
+    },
+    {
+      "nome": "coldoutbound",
+      "modulos": [
+        "copy",
+        "growth"
+      ],
+      "motivo": "fonte não encontrada (sem clone de scan nem lock): ver à mão"
+    },
+    {
+      "nome": "criar-artes",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "graphify",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "guarda-regressao",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "instaflow",
+      "modulos": [
+        "auditoria",
+        "copy",
+        "criativos",
+        "oferta",
+        "video"
+      ],
+      "motivo": "fonte não encontrada (sem clone de scan nem lock): ver à mão"
+    },
+    {
+      "nome": "jev",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "o-maestro-portal",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "o-maestro-vps",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "qual-skill",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "reverse-engineer-anything",
+      "modulos": [
+        "programacao"
+      ],
+      "motivo": "fonte não encontrada (sem clone de scan nem lock): ver à mão"
+    },
+    {
+      "nome": "sellbird",
+      "motivo": "pessoal do usuário"
+    },
+    {
+      "nome": "site-de-10k",
+      "modulos": [
+        "copy",
+        "design"
+      ],
+      "motivo": "fonte não encontrada (sem clone de scan nem lock): ver à mão"
+    },
+    {
+      "nome": "whisper-transcribe",
+      "motivo": "sem licença no repo SpillwaveSolutions/whisper-transcribe"
+    }
+  ],
+  "plugins": [
+    {
+      "nome": "superpowers",
+      "id": "superpowers@claude-plugins-official",
+      "marketplace": "anthropics/claude-plugins-official",
+      "cobre": [
+        "superpowers:brainstorming",
+        "superpowers:executing-plans",
+        "superpowers:systematic-debugging",
+        "superpowers:test-driven-development",
+        "superpowers:verification-before-completion",
+        "superpowers:writing-plans"
+      ]
+    },
+    {
+      "nome": "backend-design",
+      "id": "backend-design@claude-community",
+      "marketplace": "anthropics/claude-plugins-community",
+      "cobre": [
+        "backend-design:boring-by-default",
+        "backend-design:design",
+        "backend-design:migration-safety",
+        "backend-design:security-discipline"
+      ]
+    },
+    {
+      "nome": "obsidian",
+      "id": "obsidian@obsidian-skills",
+      "marketplace": "kepano/obsidian-skills",
+      "cobre": [
+        "obsidian:defuddle"
+      ]
+    },
+    {
+      "nome": "sales",
+      "id": "sales@knowledge-work-plugins",
+      "marketplace": "anthropics/knowledge-work-plugins",
+      "cobre": [
+        "sales"
+      ]
+    },
+    {
+      "nome": "small-business",
+      "id": "small-business@knowledge-work-plugins",
+      "marketplace": "anthropics/knowledge-work-plugins",
+      "cobre": [
+        "build-agent",
+        "proposal-builder"
+      ]
+    },
+    {
+      "nome": "legal",
+      "id": "legal@knowledge-work-plugins",
+      "marketplace": "anthropics/knowledge-work-plugins",
+      "cobre": [
+        "legal"
+      ]
+    },
+    {
+      "nome": "customer-support",
+      "id": "customer-support@knowledge-work-plugins",
+      "marketplace": "anthropics/knowledge-work-plugins",
+      "cobre": [
+        "customer-support"
+      ]
+    },
+    {
+      "nome": "human-resources",
+      "id": "human-resources@knowledge-work-plugins",
+      "marketplace": "anthropics/knowledge-work-plugins",
+      "cobre": [
+        "human-resources"
+      ]
+    },
+    {
+      "nome": "operations",
+      "id": "operations@knowledge-work-plugins",
+      "marketplace": "anthropics/knowledge-work-plugins",
+      "cobre": [
+        "operations"
+      ]
+    },
+    {
+      "nome": "data",
+      "id": "data@knowledge-work-plugins",
+      "marketplace": "anthropics/knowledge-work-plugins",
+      "cobre": [
+        "data-context-extractor"
+      ]
+    },
+    {
+      "nome": "financial-analysis",
+      "id": "financial-analysis@claude-for-financial-services",
+      "marketplace": "anthropics/financial-services",
+      "cobre": [
+        "financial-services",
+        "unit-economics"
+      ]
+    }
+  ],
+  "nativas": [
+    {
+      "nome": "code-review",
+      "nota": "comando nativo do Claude Code"
+    },
+    {
+      "nome": "security-review",
+      "nota": "comando nativo do Claude Code"
+    },
+    {
+      "nome": "dataviz",
+      "nota": "skill nativa do Claude Code"
+    },
+    {
+      "nome": "bugs-diff",
+      "nota": "vem com central-ciber"
+    },
+    {
+      "nome": "ciber-diff",
+      "nota": "vem com central-ciber"
+    }
+  ],
+  "clonar": [],
+  "clonar_2": [],
+  "criar": [],
+  "clonar_2_resolvido": {
+    "clarity-gate": "arkos-gate-rag",
+    "coldoutbound": "arkos-cold-outbound",
+    "guarda-regressao": "arkos-regressao",
+    "whisper-transcribe": "arkos-transcrever"
+  }
+}

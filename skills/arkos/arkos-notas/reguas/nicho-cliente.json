@@ -1,0 +1,373 @@
+{
+  "regua": "nicho-cliente",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Nicho de CLIENTE para a ARKOS/prestador atender (quem compra o serviço). Não é o produto a vender: isso é a régua produto-vender.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "media",
+  "nota_pesos": "Ponto de partida era 1/9 por critério-base. Auditoria: operadores precificam pelo ticket do cliente (5-10% por reunião), o conselho mais aceito é mirar clientes de US$ 3 mil+/mês e 'performance só funciona com quem já tem dinheiro e oferta'; uma agência generalista chegou a US$ 50 mil MRR, então concorrência/especialização não é decisiva. Pesos: ticket 0,20, dor 0,15, acesso 0,18, concorrência 0,08, vantagem 0,20, regulatório 0,11 (veto), sazonalidade 0,08. Relatos de operador: confiança média; recalibrar com 20 nichos no aprendizado.jsonl. O corte antigo 18/27 do doc de nichos é substituído por esta régua (75, vetos). Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "vetos": "Critérios com veto=true abaixo de 25 levam o veredito a 'descartar' mesmo com nota final ≥ 50 (régua-base: nicho com zero em critério crítico não entra em teste). Campo informativo para o script/Jev.",
+  "criterios": [
+    {
+      "id": "ticket",
+      "nome": "Valor de um cliente novo ÷ custo da unidade cobrada",
+      "acesso": "todos",
+      "peso": 0.2,
+      "veto": true,
+      "base_peso": "Peso 0,20 pela auditoria: operadores precificam pelo ticket do cliente e performance só funciona com quem já tem dinheiro. Denominador trocado de CPL para custo da unidade cobrada, porque a agência por resultado cobra reunião ou comparecimento.",
+      "pergunta": "O valor de um cliente novo para o dono do nicho (ticket × recompra × margem) é pelo menos 30 vezes o custo da unidade que cobramos (custo por lead ÷ taxa lead→unidade: reunião, comparecimento ou venda)?",
+      "como_medir": "Valor = ticket × recompra × margem com 5 donos do nicho. Custo da unidade cobrada = CPL do setor ÷ taxa lead→unidade (ex.: CPL R$ 50 ÷ 40% de comparecimento = R$ 125 por comparecimento). Razão = valor ÷ custo da unidade. Faixas são regra interna até 20 nichos no aprendizado.",
+      "evidencia_exigida": [
+        "valor de cliente com fonte (dono entrevistado, nota, CRM)",
+        "CPL do setor com fonte e data",
+        "taxa lead→unidade cobrada (comparecimento, reunião) com fonte",
+        "cálculo da razão"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "razão < 5x ou valor sem número",
+          "exemplo": "limpeza residencial: cliente vale ~150 e lead custa ~47 → ~3x"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "razão 5-12x",
+          "exemplo": "serviço de ticket baixo com recompra rara"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "razão 12-30x",
+          "exemplo": "estética de entrada com upsell possível mas não medido"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "razão 30-100x, com número de 3+ donos",
+          "exemplo": "home services de reparo com ticket médio alto"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "razão > 100x, número confirmado em nota ou CRM",
+          "exemplo": "implante: cliente ~R$ 15 mil, comparecimento ~R$ 125 → ~120x"
+        }
+      ],
+      "docs_base": [
+        "estrategia.nichos.nichos-que-mais-pagam-2026",
+        "trafego.metricas.benchmarks-por-nicho-2026",
+        "auditoria.unit-economics.cac-ltv-payback"
+      ]
+    },
+    {
+      "id": "dor_com_dinheiro",
+      "nome": "Dor urgente que já custa dinheiro",
+      "acesso": "todos",
+      "peso": 0.15,
+      "veto": false,
+      "base_peso": "1/9 (critério 'urgência da dor' da régua-base). A validação de nicho da base põe 'conversa com dor real + gasto anterior' acima de clique e e-mail: dinheiro > reunião > clique > e-mail.",
+      "pergunta": "Os donos do nicho já gastam dinheiro ou tempo hoje tentando resolver essa dor, e querem resolver nesta semana?",
+      "como_medir": "Conversas no formato de episódio concreto dos últimos 30 dias; conta quantas de 10 descrevem a dor E um gasto anterior (agência, ferramenta, funcionário).",
+      "evidencia_exigida": [
+        "nº de conversas com episódio concreto (n de 10)",
+        "exemplo de gasto anterior citado",
+        "frase literal da dor"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "≤ 2 de 10 com dor real e gasto; 'um dia talvez'",
+          "exemplo": "'seria legal ter mais clientes' sem nunca ter investido"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "3-4 de 10; dor sem gasto",
+          "exemplo": "reclamam, mas nunca contrataram nada"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "5-6 de 10 com dor e gasto anterior",
+          "exemplo": "já pagaram agência e ficaram insatisfeitos"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "7-8 de 10; prazo ou perda visível",
+          "exemplo": "agenda vazia em mês de baixa, perde lead no WhatsApp"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "≥ 9 de 10 e alguém pergunta preço ou início sem estímulo",
+          "exemplo": "'quanto custa? dá para começar segunda?'"
+        }
+      ],
+      "docs_base": [
+        "oferta.validacao.validar-nicho-48h",
+        "pesquisa.validacao.validar-nicho-48h",
+        "pesquisa.publico.entrevista-cliente-mom-test"
+      ]
+    },
+    {
+      "id": "acesso_decisor",
+      "nome": "Acesso ao decisor e alcance do nicho",
+      "acesso": "todos",
+      "peso": 0.18,
+      "veto": false,
+      "base_peso": "2/9: soma dos critérios-base 'decisor único' e 'alcance (listar 100 nomes)'. Dado de apoio: lista pequena e personalizada responde ~2,6x mais; sem lista de 100 o nicho é estreito demais.",
+      "pergunta": "O dono decide sozinho na conversa e dá para listar pelo menos 1.000 empresas do nicho na região atendida?",
+      "como_medir": "Contar empresas no Google Maps/CNPJ na região; identificar quem assina (dono x comitê) em 5 conversas.",
+      "evidencia_exigida": [
+        "contagem de empresas com fonte",
+        "quem decide em ≥ 3 conversas"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "não lista 100 nomes ou decisão em comitê de 5",
+          "exemplo": "hospital grande com compras e jurídico"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "100-300 nomes ou decisor difícil de achar",
+          "exemplo": "rede regional com gerente sem verba"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "300-1.000 nomes; dono decide com sócio",
+          "exemplo": "clínicas de médio porte com 2 sócios"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "1.000+ nomes; dono decide na call",
+          "exemplo": "dentistas de bairro numa capital"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "1.000+ nomes, dono decide e responde WhatsApp/telefone direto",
+          "exemplo": "prestadores de reparo residencial com dono no atendimento"
+        }
+      ],
+      "docs_base": [
+        "estrategia.nichos.nichos-que-mais-pagam-2026",
+        "pesquisa.prospeccao.leads-negocio-local-google-maps",
+        "pesquisa.prospeccao.icp-sinais-intencao"
+      ]
+    },
+    {
+      "id": "concorrencia",
+      "nome": "Fragmentação e concorrência",
+      "acesso": "todos",
+      "peso": 0.08,
+      "veto": false,
+      "base_peso": "1/9 (critério-base 'fragmentação'). Sem dado que lhe dê mais peso.",
+      "pergunta": "O nicho tem milhares de pequenos e médios, sem 3 grandes dominando e sem agência especialista saturando?",
+      "como_medir": "Contagem de players; Ad Library: quantos concorrentes de serviço anunciam para o nicho há > 90 dias; relatos de saturação.",
+      "evidencia_exigida": [
+        "contagem de players ou participação dos maiores",
+        "lista de concorrentes anunciando com tempo no ar"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "3 grandes dominam ou mercado saturado de especialistas",
+          "exemplo": "med spa americana em área saturada, perdendo movimento"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "poucos grandes + muitos especialistas anunciando",
+          "exemplo": "imobiliária em capital com várias agências do nicho"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "fragmentado, concorrência de serviço moderada",
+          "exemplo": "estética no interior"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "milhares de pequenos, poucos especialistas",
+          "exemplo": "HVAC regional nos EUA"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "milhares de pequenos, nenhum especialista visível há 90 dias",
+          "exemplo": "nicho técnico local sem anúncio de agência"
+        }
+      ],
+      "docs_base": [
+        "estrategia.nichos.nichos-que-mais-pagam-2026",
+        "pesquisa.concorrencia.analise-concorrente-posicionamento"
+      ]
+    },
+    {
+      "id": "nossa_vantagem",
+      "nome": "Nossa vantagem: entrega mensurável e capacidade de atender",
+      "acesso": "todos",
+      "peso": 0.2,
+      "veto": true,
+      "base_peso": "2/9: soma dos critérios-base 'unidade observável' (crítico) e 'capacidade de atender'. A base mostra que a nota de um nicho cai (critério de 3 para 1) quando quem responde o lead é a recepção do cliente no dia seguinte; o resultado depende de quem atende.",
+      "pergunta": "O resultado que entregamos aparece num registro que os dois lados leem (agenda, CRM, gateway) e o lead é atendido em minutos (por nós ou pelo cliente)?",
+      "como_medir": "Verificar se existe log compartilhado da unidade de resultado; medir tempo de resposta do cliente a 3 leads de teste.",
+      "evidencia_exigida": [
+        "qual registro mostra o resultado",
+        "tempo de resposta medido",
+        "quem assume o primeiro atendimento"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "resultado só por 'percepção'; sem log",
+          "exemplo": "branding sem métrica de venda"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "log parcial; atende em dias",
+          "exemplo": "recepção responde no dia seguinte"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "log existe mas só o cliente lê; atende em horas",
+          "exemplo": "agenda do cliente sem acesso nosso"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "log compartilhado; atende em < 1 h",
+          "exemplo": "CRM com acesso dos dois lados"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "log compartilhado e o primeiro atendimento fica conosco, em minutos",
+          "exemplo": "agendamento feito pelo nosso agente, com registro"
+        }
+      ],
+      "docs_base": [
+        "estrategia.nichos.nichos-que-mais-pagam-2026",
+        "estrategia.oaas.modelo-oaas",
+        "operacao.vendas.qualificacao-fechamento-servico"
+      ]
+    },
+    {
+      "id": "risco_regulatorio",
+      "nome": "Risco regulatório",
+      "acesso": "todos",
+      "peso": 0.11,
+      "veto": true,
+      "base_peso": "1/9; crítico na régua-base (proíbe cobrança por cliente = nicho fora). Caso na base: regra estadual que passou a exigir diretor médico mudou o que podia ser anunciado.",
+      "pergunta": "Nenhuma regra de conselho profissional ou lei local proíbe o anúncio ou a cobrança por resultado nesse nicho?",
+      "como_medir": "Conferir norma (conselho de classe no BR, regra estadual nos EUA). Na dúvida, nota < 25 e consulta jurídica.",
+      "evidencia_exigida": [
+        "norma consultada com data",
+        "o que ela permite/proíbe para anúncio e cobrança"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "proíbe cobrança por cliente ou o anúncio central",
+          "exemplo": "conselho que veda captação e preço por paciente"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "permite com restrição forte e mudança recente",
+          "exemplo": "escopo de procedimento restrito por estado"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "regras claras que limitam a promessa",
+          "exemplo": "jurídico: anúncio informativo, sem promessa"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "regras leves, só publicidade honesta",
+          "exemplo": "reparo residencial"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "sem regra de conselho; só código do consumidor",
+          "exemplo": "serviço B2B comum"
+        }
+      ],
+      "docs_base": [
+        "estrategia.nichos.nichos-que-mais-pagam-2026",
+        "estrategia.mercados.br-vs-eua-operacao"
+      ]
+    },
+    {
+      "id": "sazonalidade",
+      "nome": "Sazonalidade",
+      "acesso": "todos",
+      "peso": 0.08,
+      "veto": false,
+      "base_peso": "1/9 (critério-base 'sazonalidade'). Sem dado que diferencie.",
+      "pergunta": "A demanda do nicho é estável ou previsível o ano todo (mais de 9 meses bons)?",
+      "como_medir": "Google Trends 5 anos do termo principal; relato de donos sobre meses fracos.",
+      "evidencia_exigida": [
+        "curva de busca ou receita mensal",
+        "meses fracos identificados"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "≤ 3 meses bons por ano",
+          "exemplo": "serviço só de verão"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "4-6 meses bons",
+          "exemplo": "decoração de festas"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "7-9 meses bons, previsível",
+          "exemplo": "ar-condicionado em região de inverno curto"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "10-11 meses, picos previsíveis",
+          "exemplo": "estética com pico antes do verão"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "estável o ano todo",
+          "exemplo": "odontologia"
+        }
+      ],
+      "docs_base": [
+        "estrategia.nichos.nichos-que-mais-pagam-2026"
+      ]
+    }
+  ]
+}

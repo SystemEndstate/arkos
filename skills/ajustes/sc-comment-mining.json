@@ -1,0 +1,16 @@
+[
+  {
+    "arquivo": "SKILL.md",
+    "de": "name: comment-mining\n",
+    "para": "name: sc-comment-mining\n",
+    "porque": "nome já usado no pacote pela versão gooseworks-ai/goose-skills; as duas ficam instaladas e o roteador escolhe pelo que cada uma faz a mais",
+    "fonte": "pedido do usuário (2026-11-23): instalar mesmo com sobreposição"
+  },
+  {
+    "arquivo": "SKILL.md",
+    "de": "description: Use when",
+    "para": "description: >-\n  [ARKOS: relatório pronto de comentários (temas, perguntas, objeções, intenção de compra, frases para reaproveitar, ideias de conteúdo) com guardrails; a comment-mining entrega a lista crua para outra skill.] Use when",
+    "porque": "a descrição diz quando escolher esta em vez da versão gooseworks",
+    "fonte": "comparação das duas SKILL.md nos commits fixos"
+  }
+]

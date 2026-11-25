@@ -1,0 +1,345 @@
+{
+  "regua": "oferta",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Oferta (o que se vende, por quanto, com que garantia, bônus e motivo para agir agora) de serviço, infoproduto, SaaS ou produto. Oferta de e-commerce tem critério próprio só VIP.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "baixa",
+  "nota_pesos": "Nenhum estudo na base mede o peso relativo dos critérios de oferta. A estrutura com mais uso é o diagnóstico de 7 linhas de sim/não, todas com o mesmo peso (valor ≥ 10x o preço; mercado faminto pelo resultado; garantia que reverte o risco; bônus com nome e valor; motivo real para agir agora; diferente o bastante para não ser copiada; nome que diz para quem é e o que entrega). Cada linha vale 1/7; os critérios desta régua somam as linhas que agrupam: resultado+prova 2/7, tempo e esforço 1/7, preço x margem 1/7, garantia 1/7, escassez 1/7, mecanismo 1/7. Teto da base: sem prova real a oferta não passa de 8/10, por isso prova está junto do resultado. Efeitos isolados com estudo: escassez verdadeira d = 0,31 sobre intenção de compra (131 estudos); política de devolução mais leniente melhora o resultado do varejista. Recalibrar com aprendizado.jsonl (nota × fechamento e reembolso). Auditoria: perfil 'loja' (entrada 'perfil': 'loja', plano VIP) com oferta_ecommerce 0,30, resultado+prova 0,25 (veto), preço×margem 0,20 com veto < 50 (CM2 ÷ CPA < 1,0), garantia 0,10, tempo/esforço 0,10, mecanismo 0,05, escassez 0 (só veto). Loja aprova com nota ≥ 75, zero veto e preço×margem ok. Recalibrar com 30+ casos pondo o corte onde 'lucro D60 > 0' passa de 50%. Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "vetos": "resultado_prova e escassez abaixo de 25 (prova inventada, urgência falsa) = 'descartar', qualquer que seja a nota final.",
+  "aplicabilidade": "mecanismo: em mercado de sofisticação 1-2 (promessa direta ainda nova, < 5 concorrentes na mesma promessa) a nota do critério é a do resultado direto, sem exigir mecanismo nomeado. oferta_ecommerce (VIP) só entra quando a oferta for de loja.",
+  "criterios": [
+    {
+      "id": "resultado_prova",
+      "nome": "Resultado sonhado e probabilidade percebida (prova)",
+      "acesso": "todos",
+      "peso": 0.29,
+      "veto": true,
+      "base_peso": "2/7 do diagnóstico-base (mercado faminto pelo resultado + nome que diz o que entrega) e teto 'sem prova real não passa de 8'. Prova com volume vence promessa maior sem prova (comparação de 11.382 avaliações x 1, relato). Prova social genérica tem efeito fraco (estudo): só prova específica pontua. Depoimento inventado ou feito por IA é publicidade enganosa (regra FTC 16 CFR 465 desde 21/10/2024; CDC).",
+      "pergunta": "A oferta vende o resultado (não o veículo), em palavras do cliente, para um público que já quer esse resultado, e prova com casos específicos e autorizados que o resultado acontece?",
+      "como_medir": "Antes: frase de resultado tirada da voz do cliente; nome da oferta diz para quem e o quê; lista de provas com número e autorização. Depois: clique no preço, taxa de fechamento.",
+      "evidencia_exigida": [
+        "frase de resultado e origem no VoC",
+        "casos com número e autorização por escrito",
+        "sinal de demanda pelo resultado (busca, concorrentes, conversas)"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "vende o veículo sem resultado, ou prova inventada",
+          "exemplo": "'gestão de tráfego R$ 2.500' com depoimento fictício"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "resultado vago, prova genérica",
+          "exemplo": "'mais clientes' + 'centenas de clientes satisfeitos'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "resultado claro, prova fraca (sem número ou sem nome)",
+          "exemplo": "'agenda cheia' com 2 depoimentos sem dado"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "resultado nomeado e desejado, casos com número",
+          "exemplo": "'Agenda de Implante 60 Dias' + 3 casos com avaliações/mês"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima + volume de prova verificável",
+          "exemplo": "centenas de avaliações públicas com nota ~4,7"
+        }
+      ],
+      "docs_base": [
+        "oferta.estrutura.oferta-irresistivel",
+        "pesquisa.concorrencia.analise-concorrente-posicionamento",
+        "copy.fundamentos.pesquisa-voc-para-copy"
+      ]
+    },
+    {
+      "id": "tempo_esforco",
+      "nome": "Tempo até o resultado e esforço do cliente",
+      "acesso": "todos",
+      "peso": 0.14,
+      "base_peso": "1/7 do diagnóstico-base (bônus com nome e valor, que removem esforço). A base cita o denominador da equação de valor como o lado 'mais poderoso' (alegação de operador, sem estudo) e um caso de promessa de leads em 2-3 dias contra '6 meses' do mercado com demanda maior que a capacidade (relato). No BR, parcelamento é esforço: parcelado sem juros = 42,7% do crédito (estudo setorial).",
+      "pergunta": "A primeira vitória chega em dias com marco visível, o cliente faz o mínimo possível (feito para ele) e a forma de pagamento não cria atrito?",
+      "como_medir": "Mapear a jornada do cliente: tempo até o 1º marco, tarefas que ele precisa fazer, crenças novas que precisa ter; formas de pagamento (Pix, parcelado).",
+      "evidencia_exigida": [
+        "prazo do 1º marco com dado que o sustente (promessa de prazo vincula, CDC art. 30)",
+        "lista de tarefas do cliente",
+        "formas de pagamento"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "resultado só em meses, cliente faz quase tudo",
+          "exemplo": "curso de 12 módulos para o cliente aplicar sozinho"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "prazo longo ou muitas tarefas do cliente",
+          "exemplo": "'em 6 meses você verá resultado'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "prazo razoável, esforço médio",
+          "exemplo": "mentoria com execução do cliente e suporte"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "1º marco em dias, feito com o cliente, bônus que tiram trabalho",
+          "exemplo": "setup feito por nós + modelos prontos"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "1º marco em dias, feito para ele, pagamento sem atrito",
+          "exemplo": "primeiras avaliações em 72 h, Pix ou 12x"
+        }
+      ],
+      "docs_base": [
+        "oferta.estrutura.oferta-irresistivel",
+        "programacao.saas.pagamentos-br-pix-cartao",
+        "oferta.garantias.garantias-e-contrato-de-resultado"
+      ]
+    },
+    {
+      "id": "preco_margem",
+      "nome": "Preço x margem",
+      "acesso": "todos",
+      "peso": 0.14,
+      "base_peso": "1/7 do diagnóstico-base (valor ≥ 10x o preço). Réguas da base: preço entre 10% e 20% do valor do resultado; margem bruta de serviço ≥ 80% (relato) e contribuição 40-60%; ROAS de equilíbrio = 1 ÷ margem de contribuição; fechamento ≥ 80% indica preço 3-4x baixo, 30-40% é o preço certo (relato).",
+      "pergunta": "O preço fica entre 10% e 20% do valor do resultado para o cliente, a margem de contribuição cobre o CPA do canal com folga e a taxa de fechamento não indica preço baixo?",
+      "como_medir": "Valor do resultado ÷ preço; margem de contribuição; CPA de equilíbrio = margem de contribuição × preço, comparado ao CPA típico do nicho; taxa de fechamento (se houver vendas). LOJA (perfil loja): sem 'valor ≥ 10x' nem '10-20% do valor'; medir CM2 ÷ CPA (≥ 1,25 = ok) e preço dentro dos comparáveis; markup ≥ 3x em loja própria e ≥ 4x em marketplace/TikTok Shop abaixo de R$ 50.",
+      "evidencia_exigida": [
+        "cálculo valor ÷ preço",
+        "margem de contribuição com custos",
+        "CPA típico do canal com fonte",
+        "taxa de fechamento atual se existir"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "CPA de equilíbrio abaixo do CPA típico do nicho; loja: CM2 ÷ CPA < 0,8",
+          "exemplo": "produto de R$ 47 com margem 30% num nicho de CPA R$ 60"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "valor < 3x o preço ou margem < 40%; loja: CM2 ÷ CPA 0,8-1,0",
+          "exemplo": "preço igual ao concorrente, margem apertada"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "valor 3-5x o preço; margem cobre o CPA sem folga; ou fecha ≥ 80% (preço baixo); loja: CM2 ÷ CPA 1,0-1,25",
+          "exemplo": "fecha quase todos, cobra metade do mercado"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "valor 5-10x o preço, margem de contribuição ≥ 40%, CPA com folga; loja: CM2 ÷ CPA ≥ 1,25 e markup ≥ 3x (≥ 4x em marketplace < R$ 50)",
+          "exemplo": "serviço com contribuição de 55%"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "valor ≥ 10x o preço, margem ≥ 60%, fechamento 30-40%; loja: CM2 ÷ CPA ≥ 1,5, preço dentro dos comparáveis",
+          "exemplo": "resultado de R$ 50 mil por R$ 5 mil, fechamento 35%"
+        }
+      ],
+      "docs_base": [
+        "oferta.estrutura.oferta-irresistivel",
+        "oferta.pricing.pricing-servicos",
+        "oferta.budget.quanto-gastar-em-anuncio",
+        "auditoria.unit-economics.margem-contribuicao-coortes-payback"
+      ]
+    },
+    {
+      "id": "garantia",
+      "nome": "Garantia (reversão de risco)",
+      "acesso": "todos",
+      "peso": 0.14,
+      "base_peso": "1/7 do diagnóstico-base. Política de devolução mais longa e leniente reduz devolução e melhora o resultado do varejista (meta-análise, sem tamanho de efeito); sinal de US$ 25 baixou no-show de ~30% para < 10% (relato). Divergência resolvida na base: sem prova acumulada a garantia pesa mais; com prova, pode ser condicional.",
+      "pergunta": "A garantia vai além do mínimo legal, reverte o risco que trava a compra e promete no máximo 60-70% do resultado mediano já entregue, com condições claras?",
+      "como_medir": "Tipo (incondicional, condicional, de resultado, anti-garantia); comparar com o mínimo legal (CDC art. 49, 7 dias em compra fora do estabelecimento); meta prometida x resultado mediano histórico. Depois: reembolso D+7 e D+30 (< 5% saudável, > 8% promessa maior que a entrega).",
+      "evidencia_exigida": [
+        "texto da garantia",
+        "resultado mediano histórico",
+        "taxa de reembolso se houver vendas"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "sem garantia, ou garantia que fere a lei (limita direito do consumidor)",
+          "exemplo": "'não fazemos reembolso'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "só o mínimo legal vendido como bônus",
+          "exemplo": "'7 dias de garantia especial'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "garantia acima do mínimo, genérica",
+          "exemplo": "30 dias incondicional sem ligação com a objeção"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "garantia ligada à objeção principal, condições claras",
+          "exemplo": "condicional de 60 dias amarrada ao SLA do cliente"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "garantia de resultado observável e atribuível, meta ≤ 70% do mediano, reembolso < 5%",
+          "exemplo": "'se não comparecerem 20 avaliações em 60 dias, devolvemos a diferença'"
+        }
+      ],
+      "docs_base": [
+        "oferta.garantias.garantias-e-contrato-de-resultado",
+        "oferta.lancamento.lancar-infoproduto-br"
+      ]
+    },
+    {
+      "id": "mecanismo",
+      "nome": "Mecanismo (por que funciona e por que é diferente)",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "1/7 do diagnóstico-base (diferente o bastante para não ser copiada). Único dado quantitativo: anúncios que desmontam a solução antiga chegam ao topo 12,2% das vezes x ~10% da média, 19,7% com público que já conhece soluções e 7,3% com quem não sabe do problema (fornecedor, n = 2.443) — o efeito depende do estágio. Mecanismo só é obrigatório a partir do estágio 3 de sofisticação.",
+      "pergunta": "A oferta explica, com nome e prova, por que funciona e por que as soluções antigas falharam, num mercado que já ouviu a promessa direta?",
+      "como_medir": "Contar concorrentes na mesma promessa: ≥ 5 e < 30% com mecanismo = estágio 3; ≥ 30% = estágio 4. Avaliar candidato a mecanismo (dor, credibilidade, novidade, especificidade, provabilidade). Depois: A/B promessa x mecanismo (mecanismo precisa ganhar ≥ 20% de CTR em 7 dias).",
+      "evidencia_exigida": [
+        "estágio de sofisticação com contagem de concorrentes",
+        "nome e explicação do mecanismo",
+        "prova do mecanismo (base razoável antes de ir ao ar)"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "mecanismo inventado/sem prova, ou estágio ≥ 3 sem mecanismo",
+          "exemplo": "'tecnologia exclusiva 5x mais rápida' sem estudo"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "mecanismo genérico, igual ao do mercado",
+          "exemplo": "'método passo a passo'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "mecanismo claro, pouco provado; ou estágio 1-2 com promessa direta forte",
+          "exemplo": "explica o porquê, sem caso"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "mecanismo nomeado, específico, provado, explica a falha das soluções antigas",
+          "exemplo": "'agendamento em 60 s: o lead que espera 4 h esfria'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima e venceu a promessa direta em teste",
+          "exemplo": "mecanismo com CTR ≥ 20% acima em 7 dias"
+        }
+      ],
+      "docs_base": [
+        "oferta.mecanismo.mecanismo-unico",
+        "pesquisa.mecanismo.mecanismo-unico-sofisticacao",
+        "oferta.produto.familiar-desconhecido-e-novo-mecanismo"
+      ]
+    },
+    {
+      "id": "escassez",
+      "nome": "Escassez e urgência verdadeiras",
+      "acesso": "todos",
+      "peso": 0.14,
+      "veto": true,
+      "base_peso": "1/7 do diagnóstico-base (motivo real para agir agora). Efeito com estudo: d = 0,31 sobre intenção de compra (131 estudos; oferta limitada 0,39, prazo 0,34, demanda 0,28; em produto utilitário só escassez por demanda funciona; mede intenção, não compra). 76% dos compradores de Black Friday já se sentiram enganados (pesquisa de órgão de defesa do consumidor). Sem prova, a escassez zera e a peça é bloqueada.",
+      "pergunta": "Existe um motivo real e comprovável para agir agora (vagas limitadas pela capacidade, prazo de turma, estoque real, preço que sobe em data marcada), com a prova arquivada antes de ir ao ar?",
+      "como_medir": "Identificar o tipo de escassez e a prova (capacidade da equipe, data de turma, estoque); conferir que o prazo não reinicia; casar o tipo com o produto (utilitário = demanda).",
+      "evidencia_exigida": [
+        "tipo de escassez",
+        "prova arquivada (capacidade, data, estoque)"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "urgência falsa (contador que reinicia, 'últimas vagas' permanente)",
+          "exemplo": "contagem regressiva que volta a 24 h"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "sem motivo para agir agora",
+          "exemplo": "oferta perene sem nenhum gatilho"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "motivo real, sem prova arquivada ou tipo errado para o produto",
+          "exemplo": "prazo em produto utilitário"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "motivo real e provado",
+          "exemplo": "10 vagas por mês pela capacidade da equipe, registrada"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "motivo real, provado e casado com o tipo de produto",
+          "exemplo": "turma com data e reajuste anunciado com antecedência"
+        }
+      ],
+      "docs_base": [
+        "oferta.persuasao.influencia-e-pre-suasao",
+        "oferta.estrutura.oferta-irresistivel"
+      ]
+    }
+  ],
+  "perfis": {
+    "loja": {
+      "descricao": "oferta de e-commerce/loja (VIP): nenhum estudo mede peso; ordem e portões da auditoria. Frete é o motivo nº 1 de abandono; escassez só como veto contra urgência falsa.",
+      "soma_1": true,
+      "inclui_vip": true,
+      "pesos": {
+        "oferta_ecommerce": 0.3,
+        "resultado_prova": 0.25,
+        "preco_margem": 0.2,
+        "garantia": 0.1,
+        "tempo_esforco": 0.1,
+        "mecanismo": 0.05,
+        "escassez": 0
+      },
+      "veto": {
+        "preco_margem": 50,
+        "resultado_prova": 25,
+        "escassez": 25
+      }
+    }
+  }
+}

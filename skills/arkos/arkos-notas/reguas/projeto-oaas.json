@@ -1,0 +1,278 @@
+{
+  "regua": "projeto-oaas",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Projeto de cliente candidato a contrato por resultado (OaaS, rev share, por reunião, gain-share, híbrido com variável).",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "media",
+  "nota_pesos": "Ponto de partida: 10 condições de entrada com peso igual + prazo (unidades ÷ 11). Auditoria: os fracassos relatados se concentram em definição de lead, controle do funil e caixa/margem; em escala, uma empresa de lead por resultado fica com ~27,7% depois da mídia e ~13,7% de EBITDA. Por isso a margem sobe de 0,18 para 0,22 e resultado cai de 0,37 para 0,33. A regra 'faltou uma condição, variável até ~20%' é regra interna; pesquisa de anunciantes (2013 e 2022) confirma o variável como complemento minoritário da base (incentivo em 41% dos anunciantes em 2022, contra 61% em 2013). confianca_pesos fica 'media' até 20 contratos no ledger. Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "vetos": "Critérios com veto=true abaixo de 25: o projeto não segue como OaaS puro; veredito 'descartar' para OaaS e a recomendação passa a ser híbrido ou fixo por marco. Campo informativo para o script/Jev.",
+  "criterios": [
+    {
+      "id": "resultado_mensuravel",
+      "nome": "Resultado mensurável e contratável",
+      "acesso": "todos",
+      "peso": 0.33,
+      "veto": true,
+      "base_peso": "4 de 11 unidades: observável, contratável, linha de base de 90 dias assinada, acesso de leitura à fonte da verdade. A base registra que toda disputa de atribuição começa com definição vaga de 'qualificado'.",
+      "pergunta": "O resultado cobrado é visto num sistema que os dois lados leem (CRM, agenda, gateway), está definido por escrito com o que 'não conta', e há linha de base que cobre o ciclo da demanda (90 dias se estável; senão o mesmo mês do ano anterior)?",
+      "como_medir": "Preencher a ficha de resultado de 10 campos; medir a variação mês a mês da unidade: < 20% = 90 dias de linha de base bastam; ≥ 20% = mesmo mês do ano anterior (12 meses), ajuste por regressão, ou variável suspenso no pico; testar acesso de leitura.",
+      "evidencia_exigida": [
+        "ficha de resultado preenchida",
+        "linha de base que cobre o ciclo da demanda: 90 dias se a variação mês a mês for < 20%; se não, o mesmo mês do ano anterior (12 meses) ou variável suspenso no pico",
+        "acesso de leitura confirmado (não print)"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "resultado subjetivo ou sem fonte da verdade",
+          "exemplo": "'melhorar a marca', 'mais visibilidade'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "unidade definida, sem linha de base nem acesso",
+          "exemplo": "'leads' contados em print do cliente"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "unidade e fonte definidas, linha de base < 90 dias ou sem 'não conta'",
+          "exemplo": "reunião marcada sem critério de qualificada"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "ficha completa, linha de base cobre o ciclo da demanda: 90 dias se a variação mês a mês for < 20%; se não, o mesmo mês do ano anterior (12 meses) ou variável suspenso no pico; acesso de leitura",
+          "exemplo": "reunião realizada com campos de qualificação no CRM e 12 meses de histórico num nicho sazonal"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima + prazo de contestação e ledger com evidência por unidade",
+          "exemplo": "venda paga em checkout próprio, contestação em 5 dias úteis"
+        }
+      ],
+      "docs_base": [
+        "estrategia.oaas.modelo-oaas",
+        "estrategia.pricing.precificacao-por-resultado",
+        "oferta.garantias.garantias-e-contrato-de-resultado"
+      ]
+    },
+    {
+      "id": "controle_alavancas",
+      "nome": "Controle das alavancas até a unidade cobrada",
+      "acesso": "todos",
+      "peso": 0.27,
+      "veto": true,
+      "base_peso": "3 de 11 unidades: atribuível, produto que já vende sem a agência, SLA de atendimento. Regra da base: cobrar na última etapa do funil que você controla; garantia sem controlar o funil não se cumpre.",
+      "pergunta": "Controlamos as etapas até a unidade cobrada (ou o cliente cumpre SLA escrito nelas), e o produto do cliente já tem pagantes, preço e margem conhecidos?",
+      "como_medir": "Mapear o funil etapa a etapa: quem executa cada uma (nós x cliente). Conferir clientes pagantes atuais e margem bruta. Medir tempo de resposta a lead.",
+      "evidencia_exigida": [
+        "mapa do funil com dono de cada etapa",
+        "nº de clientes pagantes e margem bruta do cliente",
+        "SLA de resposta medido ou assumido por nós"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "resultado depende de etapa que o cliente executa sem SLA, ou produto sem venda",
+          "exemplo": "cobrar venda fechada por vendedor do cliente que responde em dias"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "controlamos só a mídia",
+          "exemplo": "só rodar anúncio e cobrar faturamento"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "controlamos geração e qualificação; cliente atende sem SLA escrito",
+          "exemplo": "cobrar reunião marcada, recepção confirma quando dá"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "unidade na última etapa que controlamos; SLA escrito do cliente",
+          "exemplo": "cobrar comparecimento, com lembrete e confirmação nossos"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "controlamos oferta, página, atendimento e a venda ocorre em sistema que lemos",
+          "exemplo": "checkout próprio + atendimento por nosso agente"
+        }
+      ],
+      "docs_base": [
+        "estrategia.pricing.precificacao-por-resultado",
+        "estrategia.oaas.modelo-oaas",
+        "oferta.garantias.garantias-e-contrato-de-resultado"
+      ]
+    },
+    {
+      "id": "margem",
+      "nome": "Margem no cenário pessimista",
+      "acesso": "todos",
+      "peso": 0.22,
+      "veto": false,
+      "base_peso": "Peso 0,22 pela auditoria: caixa e margem aparecem entre as 3 causas de fracasso (operador com ~95% de retenção sem conseguir pagar salário). Margem de contribuição mínima 35% (calculadora); margem líquida comparada com ~14% (setor de agências) e teto de referência em escala ~13,7% de EBITDA (empresa de lead por resultado listada).",
+      "pergunta": "No cenário pessimista (volume e taxa de sucesso baixos), o preço por unidade + piso cobre o custo e mantém a margem mínima, com a mídia paga pelo cliente?",
+      "como_medir": "Rodar a calculadora OaaS com três cenários; margem de contribuição pessimista ≥ 35%; margem líquida comparada com ~14% do setor; conferir setup cobrado no D+0 e que a mídia não sai do nosso caixa.",
+      "evidencia_exigida": [
+        "saída da calculadora com os 3 cenários",
+        "custo de operação e IA estimado",
+        "quem paga a mídia"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "prejuízo no cenário base ou nós pagamos a mídia",
+          "exemplo": "variável puro sem piso, mídia no nosso cartão"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "lucro só no otimista",
+          "exemplo": "break-even exige 50 unidades, histórico mostra 25"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "lucro no base, prejuízo no pessimista",
+          "exemplo": "margem pessimista negativa, piso baixo"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "margem mínima mantida no pessimista",
+          "exemplo": "piso cobre operação, variável é lucro"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "margem mínima no pessimista com folga e piso antecipado",
+          "exemplo": "piso D+0, mídia direta do cliente, teto definido"
+        }
+      ],
+      "docs_base": [
+        "estrategia.pricing.precificacao-por-resultado",
+        "operacao.financeiro.rentabilidade-agencia-precificacao",
+        "estrategia.posicionamento.agencia-produtizada-ai-native",
+        "auditoria.unit-economics.margem-contribuicao-coortes-payback"
+      ]
+    },
+    {
+      "id": "risco",
+      "nome": "Risco (regulatório, seleção adversa, plataforma, caixa)",
+      "acesso": "todos",
+      "peso": 0.09,
+      "veto": false,
+      "base_peso": "1 de 11 unidades (sem conflito regulatório). Os outros riscos da tabela da base (atribuição, cliente que não atende, sazonalidade, plataforma, caixa, seleção adversa, cancelamento após sucesso) já são mitigados pelos outros critérios; aqui pontua o que sobra. Auditoria: concentração de carteira entra aqui (agência perdeu cliente que era ~1/3 da receita).",
+      "pergunta": "O projeto está livre de conflito regulatório, os riscos de seleção adversa, dependência de plataforma e cancelamento após sucesso têm mitigação escrita, e este cliente NÃO passaria de 25% da receita do prestador (ou tem fidelidade mínima)?",
+      "como_medir": "Checar regra do setor (saúde, advocacia, seguros); diagnóstico pago antes da proposta; cláusulas de exclusão por bloqueio de plataforma e fidelidade mínima.",
+      "evidencia_exigida": [
+        "norma do setor consultada",
+        "cláusulas de mitigação na minuta",
+        "resultado do diagnóstico prévio",
+        "% da receita do prestador que este cliente representaria"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "regra do setor proíbe a cobrança, ou cliente só aceita porque não tem produto",
+          "exemplo": "cliente sem vendas que só topa 'se der resultado'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "2+ riscos sem mitigação",
+          "exemplo": "um canal só, sem cláusula de bloqueio"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "1 risco relevante sem mitigação, ou cliente > 25% da receita sem fidelidade mínima",
+          "exemplo": "sem fidelidade mínima num cliente que seria 30% da receita"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "todos com mitigação escrita",
+          "exemplo": "exclusão por bloqueio, fidelidade, diagnóstico pago"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "mitigação escrita e dois canais desde o mês 2",
+          "exemplo": "Meta + Google, contas do cliente"
+        }
+      ],
+      "docs_base": [
+        "estrategia.pricing.precificacao-por-resultado",
+        "estrategia.nichos.nichos-que-mais-pagam-2026",
+        "oferta.garantias.garantias-e-contrato-de-resultado"
+      ]
+    },
+    {
+      "id": "prazo_ate_resultado",
+      "nome": "Prazo até o primeiro resultado cobrável",
+      "acesso": "todos",
+      "peso": 0.09,
+      "veto": false,
+      "base_peso": "1 de 11 unidades. A base exclui do OaaS site, SEO de longo prazo e conteúdo por não terem resultado atribuível dentro do prazo do contrato; o piloto padrão é de 30 a 90 dias.",
+      "pergunta": "A primeira unidade cobrável aparece em até 30 dias e o resultado se prova dentro de um piloto de 90 dias?",
+      "como_medir": "Estimar o tempo do funil (ciclo de venda, fase de aprendizado da plataforma, tempo de setup) com histórico do cliente ou benchmark do canal.",
+      "evidencia_exigida": [
+        "ciclo de venda do cliente",
+        "estimativa de setup e aprendizado",
+        "plano do piloto com data de revisão"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "resultado só depois de 6+ meses",
+          "exemplo": "SEO de longo prazo cobrado por venda"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "primeira unidade em 60-90 dias",
+          "exemplo": "B2B com ciclo de 3 meses cobrado por contrato"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "primeira unidade em 30-60 dias",
+          "exemplo": "por reunião B2B com aquecimento"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "primeira unidade em 7-30 dias",
+          "exemplo": "agendamento de clínica via anúncio"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "primeira unidade em < 7 dias, piloto prova em 30",
+          "exemplo": "lead de reparo residencial com histórico de canal"
+        }
+      ],
+      "docs_base": [
+        "estrategia.pricing.precificacao-por-resultado",
+        "oferta.budget.quanto-gastar-em-anuncio",
+        "estrategia.oaas.modelo-oaas"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+ "gerado": "EXEMPLO so para teste. O catalogo real sai de `roteador.py gerar-catalogo --playbooks cli/data/playbooks.json` (gatilhos + skills[]), para nao divergir do terminal.",
+ "skills": [
+  {"skill": "arkos-scraper-nicho", "categoria": "prospeccao", "modulos": ["growth"], "palavras": ["minerar", "nicho", "negocios locais", "prospectar", "leads", "maps"], "escreve": false, "envia": false},
+  {"skill": "arkos-lead-merge", "categoria": "prospeccao", "modulos": ["growth"], "palavras": ["lead", "crm", "importar", "deduplicar", "lista"], "escreve": true, "envia": false},
+  {"skill": "arkos-conversa", "categoria": "vendas/proposta", "modulos": ["vendas"], "palavras": ["conversa", "whatsapp", "atendimento", "responder cliente", "sdr"], "escreve": false, "envia": true},
+  {"skill": "arkos-escala", "categoria": "midia-paga", "modulos": ["trafego"], "palavras": ["anuncio", "campanha", "trafego pago", "meta ads", "escalar", "pausar"], "escreve": true, "envia": false},
+  {"skill": "arkos-oaas-proposta", "categoria": "vendas/proposta", "modulos": ["vendas"], "palavras": ["proposta", "orcamento", "fechar", "oaas"], "escreve": false, "envia": false}
+ ]
+}

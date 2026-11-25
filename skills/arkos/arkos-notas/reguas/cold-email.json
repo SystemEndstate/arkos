@@ -1,0 +1,366 @@
+{
+  "regua": "cold-email",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "E-mail frio (e sequência curta) para um prospect ou lote, antes do envio. Inclui a infraestrutura de envio e a lei do país do destinatário.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "media",
+  "nota_pesos": "Taxa de resposta sempre sobre e-mails ENVIADOS (as médias públicas variam de 0,45% a 8,5% só por mudar o denominador). Pesos pelo efeito medido: relevância da lista (listas de 21-50 pessoas respondem 6,2% contra 2,4% nas de 500+, 2,6x; abrir com pitch derruba até 57%) > personalização (+56% com 2 atributos; até ~5x com 1º parágrafo personalizado; mas personalização de enfeite por IA piorou em relatos) > CTA (pedir tempo derruba até 44%; oferecer algo sobe até 28%) = risco de spam (multiplicador: acima de 0,3% de spam não há mitigação, regra oficial) > concisão (25-50 palavras +67% de respostas; < 50 palavras 1,47% x 1,03% com 100-149) > prova (+41%, fonte única) > lei (portão com veto). Concisão entrou porque os dados mostram efeito próprio. Quase todos os números são de fornecedores de ferramenta; recalibrar com aprendizado.jsonl (nota × reply positivo e reunião). Ajustes da auditoria: cta vira oferta_cta (0,20) e personalização cai para 0,15. Planejar 0,4-0,5% de resposta HUMANA por e-mail (73,7% do que a plataforma chama de resposta é auto-reply), meta 0,7%, topo ≥ 1,3%; ~700 e-mails por interessado. Sequência avaliada: 3 e-mails, 2º entre 7 e 14 dias, 3-5 semanas no total; 4º só como teste com controle. Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "vetos": "risco_spam e lei_mercado abaixo de 25 = 'descartar' (não envia), qualquer que seja a nota final.",
+  "criterios": [
+    {
+      "id": "relevancia",
+      "nome": "Relevância (lista, ICP e problema do prospect)",
+      "acesso": "todos",
+      "peso": 0.25,
+      "base_peso": "Maior efeito medido: listas de 21-50 = 6,2% de resposta x 2,4% em 500+ (fornecedor); fundadores e empresas de 0-10 pessoas respondem 2-3x mais que VP/10.000+; 1-2 pessoas por empresa 5,1% x 3,5% para 3+; abrir com pitch derruba até 57%. Auditoria: resposta humana 0,88% em campanhas de 500-2.000 contra 0,33% em 25 mil+ (1,41 mi de envios, correlação); segmento até 500 por variante.",
+      "pergunta": "O prospect está no ICP, o e-mail começa pelo problema dele (não pela nossa empresa) e o segmento por variante tem até 500 contatos, com 1-2 pessoas por empresa?",
+      "como_medir": "Antes: nota de encaixe do prospect (régua prospect), tamanho do segmento por mensagem, primeira frase fala do prospect ou de nós. Depois: positivas ÷ respostas ≥ 30% verde, 15-30% amarelo, < 15% parar.",
+      "evidencia_exigida": [
+        "segmento e tamanho do lote",
+        "primeira frase do e-mail",
+        "nota de encaixe do prospect"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "lista comprada genérica; abre falando de nós",
+          "exemplo": "'Somos a agência X, líder em...' para 5.000 contatos"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "ICP certo, mensagem igual para centenas",
+          "exemplo": "um texto para 'donos de negócio'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "segmento de 500-2.000 por variante, abre pelo problema do setor",
+          "exemplo": "'clínicas perdem lead fora do horário'"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "segmento ≤ 500 por variante, problema específico do tipo de empresa",
+          "exemplo": "'HVAC no Texas: chamadas perdidas no pico do verão'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima + problema ligado a um sinal da empresa",
+          "exemplo": "abre pela vaga de atendente que a empresa acabou de abrir"
+        }
+      ],
+      "docs_base": [
+        "operacao.vendas.cold-email-sequencia-benchmarks",
+        "copy.email.cold-email-copy-eua-2026",
+        "pesquisa.prospeccao.icp-sinais-intencao"
+      ]
+    },
+    {
+      "id": "personalizacao",
+      "nome": "Personalização pelo sinal",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "Sem personalização 3,6% x 5,6% com 2 atributos (+56%); editado à mão 5,2% x 4,4% totalmente automático; 1º parágrafo personalizado ~5x (10% x 2%, fornecedor via operador). Divergência: personalização por IA como enfeite piorou (0,93 x 1,02 reunião por 100 envios, relato); 69% dos decisores se incomodam com e-mail que parece escrito por IA. Decisão: pontua personalização ligada a sinal verificável, não elogio. Auditoria: personalização de enfeite por IA não ajuda; peso 0,20 → 0,15.",
+      "pergunta": "A personalização cita um fato verificável e recente do prospect (com URL de origem) que se liga ao motivo do contato, e não elogio genérico?",
+      "como_medir": "Conferir o gancho: tem URL de origem? é recente (dentro da validade do sinal)? liga ao problema? Gancho sem URL não pontua.",
+      "evidencia_exigida": [
+        "URL de origem do gancho",
+        "data do sinal"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "só {nome}/{empresa} ou elogio genérico",
+          "exemplo": "'I came across your profile and loved your journey'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "fato real mas sem ligação com o motivo",
+          "exemplo": "parabéns pelo aniversário da empresa"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "fato ligado ao motivo, sem origem verificável ou antigo",
+          "exemplo": "post de 8 meses atrás"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "sinal recente com URL, ligado ao problema",
+          "exemplo": "assunto '{empresa}'s IT hire' + 1ª linha sobre a vaga"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "sinal recente + observação própria que só quem olhou faria",
+          "exemplo": "aponta 3 reviews sem resposta da semana e o custo disso"
+        }
+      ],
+      "docs_base": [
+        "copy.email.cold-email-copy-eua-2026",
+        "operacao.vendas.cold-email-sequencia-benchmarks",
+        "pesquisa.prospeccao.icp-sinais-intencao"
+      ]
+    },
+    {
+      "id": "oferta_cta",
+      "nome": "Oferta e CTA de baixo atrito",
+      "acesso": "todos",
+      "peso": 0.2,
+      "base_peso": "Auditoria: oferta é a variável que mais move o resultado (entregável grátis levou resposta de 0,9% para 3,4%, relato); CTA que pede tempo derruba a resposta em até 44% e CTA que oferece algo sobe até 28% (fornecedor). Peso 0,20.",
+      "pergunta": "O e-mail traz uma oferta de valor para o prospect (entregável grátis, diagnóstico, teardown) e um único CTA de interesse ou de oferta, sem pedir reunião no primeiro toque?",
+      "como_medir": "Contar CTAs; classificar (pede tempo / pede interesse / oferece algo). Depois: reunião ÷ positivas ≥ 40%.",
+      "evidencia_exigida": [
+        "texto do CTA"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "vários CTAs ou link de agenda no 1º toque",
+          "exemplo": "'agende aqui: calendly...' + 'veja nosso site'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "pede reunião com horário",
+          "exemplo": "'15 minutos na terça?'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "pergunta aberta vaga",
+          "exemplo": "'Thoughts?'"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "1 CTA de interesse",
+          "exemplo": "'faz sentido eu mandar como fazemos?'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "1 CTA que oferece algo de valor feito para ele",
+          "exemplo": "'quer que eu mande o teardown de 2 min do seu anúncio?'"
+        }
+      ],
+      "docs_base": [
+        "copy.email.cold-email-copy-eua-2026",
+        "operacao.vendas.cold-email-sequencia-benchmarks"
+      ]
+    },
+    {
+      "id": "risco_spam",
+      "nome": "Risco de spam (entregabilidade)",
+      "acesso": "todos",
+      "peso": 0.15,
+      "veto": true,
+      "base_peso": "Multiplicador de tudo: spam rate ≥ 0,3% não tem mitigação (regra oficial do provedor); bounce > 2% pausa no dia; resposta caindo 50% em 3 dias = problema de entrega, não de copy. Só 13% dos remetentes testam caixa de entrada (fornecedor). Auditoria: bounce da plataforma (3,04%) é bem maior que o endereço inexistente real (1,27%) em 1,41 mi de envios; daí dois limites.",
+      "pergunta": "Domínio de envio separado com SPF, DKIM e DMARC passando, 2 semanas só de aquecimento, 15-20 envios por caixa/dia (teto 25), 2-3 caixas por domínio, lista verificada (hard bounce real ≤ 2%), spam rate < 0,1% e texto sem gatilhos no 1º toque?",
+      "como_medir": "Checagem de DNS, teste de caixa de entrada, painel do provedor (spam rate; ≥ 0,3% pausa), verificação da lista. Hard bounce real > 2% pausa o lote; bounce total da plataforma > 3% pausa a caixa.",
+      "evidencia_exigida": [
+        "SPF/DKIM/DMARC ok",
+        "spam rate e bounce dos últimos 7 dias",
+        "resultado do teste de caixa de entrada"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "domínio principal sem autenticação, spam ≥ 0,3%, hard bounce real > 2% ou bounce total > 3%",
+          "exemplo": "disparo de 2.000/dia do domínio da empresa"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "autenticado, sem as 2 semanas de aquecimento ou lista não verificada",
+          "exemplo": "domínio novo enviando no dia 1"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "spam 0,1-0,3% ou bounce 2-3%; links no 1º toque",
+          "exemplo": "aquecido, mas com 3 links e imagem"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "tudo verde (spam < 0,1%, hard bounce ≤ 2%), 15-20 por caixa/dia, 2-3 caixas por domínio",
+          "exemplo": "domínio secundário aquecido, texto puro"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo verde + teste de caixa de entrada recente + 'remover' < 0,3%",
+          "exemplo": "seed test semanal com caixa de entrada nos 3 provedores"
+        }
+      ],
+      "docs_base": [
+        "operacao.vendas.cold-email-deliverability-infra-2026",
+        "growth.outbound.cold-email-cadencia-eua",
+        "operacao.vendas.cold-email-sequencia-benchmarks"
+      ]
+    },
+    {
+      "id": "concisao",
+      "nome": "Concisão e leitura",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "25-50 palavras: +67% de respostas x 125 palavras; leitura de 5ª série +67% (fornecedor); < 50 palavras 1,47% x 1,03% com 100-149 (fornecedor). Encurtar rende mais que personalizar (fornecedor, grande amostra). Critério acrescentado à lista-base pelo tamanho do efeito.",
+      "pergunta": "O 1º e-mail tem 25-75 palavras (76-90 aceitável, > 90 reprova) e os follow-ups ≤ 90, com leitura fácil no celular?",
+      "como_medir": "Contar palavras do 1º e-mail e dos follow-ups; índice de legibilidade.",
+      "evidencia_exigida": [
+        "contagem de palavras",
+        "índice de legibilidade"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "1º e-mail > 125 palavras",
+          "exemplo": "apresentação da empresa + 5 serviços"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "1º e-mail 91-125 palavras (reprova no limite de 90)",
+          "exemplo": "contexto demais antes do ponto"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "1º e-mail 76-90 palavras (aceitável)",
+          "exemplo": "bom, com uma frase sobrando"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "1º e-mail 51-75 palavras, follow-ups ≤ 90",
+          "exemplo": "sinal, problema, prova, CTA em 4 linhas"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "1º e-mail 25-50 palavras, leitura de 5ª série, sem perder o motivo",
+          "exemplo": "3 frases que se leem num relance"
+        }
+      ],
+      "docs_base": [
+        "copy.email.cold-email-copy-eua-2026",
+        "operacao.vendas.cold-email-sequencia-benchmarks"
+      ]
+    },
+    {
+      "id": "prova",
+      "nome": "Prova do mesmo setor",
+      "acesso": "todos",
+      "peso": 0.08,
+      "base_peso": "Prova de empresa parecida rende até +41% (fornecedor, via operador; fonte única). Linguagem de ROI genérica teve −15%. Peso baixo até a retro confirmar.",
+      "pergunta": "O e-mail cita um resultado concreto de cliente do mesmo setor ou porte, verificável e autorizado?",
+      "como_medir": "Conferir setor do caso citado x setor do prospect; número com contexto; autorização.",
+      "evidencia_exigida": [
+        "caso citado e autorização de uso"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "sem prova ou prova inventada",
+          "exemplo": "'ajudamos centenas de empresas'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "prova de outro setor",
+          "exemplo": "caso de e-commerce para escritório de advocacia"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "setor certo, sem número",
+          "exemplo": "'trabalhamos com clínicas como a sua'"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "setor certo, número com contexto",
+          "exemplo": "'clínica de 3 cadeiras em Campinas: +22 avaliações/mês'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "concorrente direto ou vizinho, número e prazo",
+          "exemplo": "caso da mesma cidade e nicho, com período"
+        }
+      ],
+      "docs_base": [
+        "copy.email.cold-email-copy-eua-2026"
+      ]
+    },
+    {
+      "id": "lei_mercado",
+      "nome": "Lei do mercado do destinatário",
+      "acesso": "todos",
+      "peso": 0.07,
+      "veto": true,
+      "base_peso": "Portão, sem dado de peso. Exposição: CAN-SPAM até US$ 53.088 por e-mail; CASL até CA$ 10 mi por violação; LGPD até 2% do faturamento (teto R$ 50 mi); base comprada sem prova de consentimento já gerou multa de € 900 mil na Europa. Árvore de decisão da base: lead sem campo de fonte sai; alguns países europeus saem do lote de e-mail; Canadá só com consentimento registrado.",
+      "pergunta": "O envio cumpre a lei do país do destinatário (EUA: remetente real, endereço físico, opt-out; Canadá: consentimento registrado; BR: legítimo interesse (LIA) documentado, aviso de origem e saída em 1 clique; Europa: base legal por país) e cada lead tem fonte registrada?",
+      "como_medir": "Checar país e fonte de cada lead. BR: e-mail pessoal (gmail etc.) só entra se o titular o publicou como contato do negócio (site, Perfil da Empresa, cartão CNPJ do MEI), com URL + data, LIA, aviso de origem, saída em 1 clique e conta de envio separada; base comprada/enriquecedor fica fora.",
+      "evidencia_exigida": [
+        "país e fonte de cada lead",
+        "rodapé com endereço físico e opt-out",
+        "registro de legítimo interesse ou consentimento",
+        "para e-mail pessoal no BR: URL e data onde o titular publicou o contato do negócio"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "lead sem fonte, Canadá sem consentimento, sem opt-out ou país vetado no lote",
+          "exemplo": "base comprada com 30% sem origem"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "opt-out presente, fonte parcial",
+          "exemplo": "fornecedor com > 20% dos leads sem fonte verificável (descartar o fornecedor)"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "fonte e opt-out ok, sem registro de base legal",
+          "exemplo": "BR sem teste de legítimo interesse escrito"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "fonte, opt-out e base legal registrados",
+          "exemplo": "EUA com endereço físico e descadastro em 1 clique"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima + supressão compartilhada entre caixas e auditoria do fornecedor",
+          "exemplo": "lista de supressão central atualizada a cada envio"
+        }
+      ],
+      "docs_base": [
+        "operacao.vendas.compliance-outbound-eua-canada-europa",
+        "operacao.lgpd.lgpd-prospeccao-legitimo-interesse",
+        "copy.email.cold-email-copy-eua-2026"
+      ]
+    }
+  ]
+}

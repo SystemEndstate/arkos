@@ -1,0 +1,217 @@
+{
+  "regua": "prospect",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Empresa ou pessoa específica a abordar (lead de prospecção), antes do primeiro contato.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "media",
+  "nota_pesos": "A base usa duas notas de 0-100, encaixe e intenção, e uma matriz em que as duas têm o mesmo poder de decisão (≥ 70 nas duas = abordar em 48 h). Por isso encaixe+orçamento = 0,50 e sinal+decisor = 0,50. Dentro do encaixe, a planilha-base dá 15 de 100 pontos à capacidade de pagar (→ orçamento 0,10, arredondado de 0,075). Acesso ao decisor vale 1/9 na régua de nicho (→ 0,10). Pesos mantidos pela auditoria. Recalibração: 30 ganhos + 30 perdas, um peso por rodada; 300 por variante é alarme, não vencedor; topo × lista genérica com 1.500 contatos ou 15 reuniões por braço (dobrar 0,5%→1% pede ~4.700 por braço). Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "criterios": [
+    {
+      "id": "encaixe_icp",
+      "nome": "Encaixe no ICP",
+      "acesso": "todos",
+      "peso": 0.4,
+      "base_peso": "Metade da decisão na matriz encaixe × intenção, menos a parte de orçamento. Planilha-base: setor 25, porte 20, tecnografia 15, canal que depende de lead 15, região 10. Firmografia sozinha é o pior preditor. Auditoria: fornecedores tratam encaixe como portão e intenção como ordem; encaixe < 50 descarta o lead mesmo com sinal alto (veto_abaixo 50).",
+      "pergunta": "A empresa está no setor e porte do ICP, vive de lead e usa ferramentas que integram com a entrega?",
+      "como_medir": "Aplicar a planilha de encaixe da base (setor, porte, tecnografia, canal de venda, região) sobre dados públicos (CNPJ, site, Ad Library, Google Maps).",
+      "evidencia_exigida": [
+        "setor e porte com fonte",
+        "ferramenta detectada (CRM, pixel, WhatsApp API) ou 'nenhuma'",
+        "como vende (agenda, orçamento, licitação)"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "fora do nicho ou porte errado (sai da lista)",
+          "exemplo": "MEI para serviço de R$ 3 mil/mês"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "nicho vizinho e porte fora da faixa",
+          "exemplo": "vende só por licitação"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "nicho T2, porte vizinho (nutrição ou sequência padrão)",
+          "exemplo": "clínica pequena sem site próprio"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "nicho T1, porte ideal, vive de lead",
+          "exemplo": "clínica com agendamento online e site"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "T1 completo e tecnografia que integra direto",
+          "exemplo": "usa CRM e pixel, anuncia, atende em região coberta"
+        }
+      ],
+      "docs_base": [
+        "pesquisa.prospeccao.icp-sinais-intencao",
+        "pesquisa.prospeccao.leads-negocio-local-google-maps"
+      ],
+      "veto": true,
+      "veto_abaixo": 50
+    },
+    {
+      "id": "sinal_compra",
+      "nome": "Sinal de compra (por que agora)",
+      "acesso": "todos",
+      "peso": 0.4,
+      "base_peso": "Outra metade da matriz encaixe × intenção. Dado de apoio (fornecedor, sem método publicado): negócio com ex-defensor que mudou de empresa fechou +114%. Lista pequena com gancho do sinal responde ~2,6x mais. Sinal vencido vale zero. Auditoria: em 1 mi de compras de software, aumento genérico de vagas +7% e VP novo +28% (correlação); resposta cai com o tempo desde o sinal — daí o fator de frescor.",
+      "pergunta": "Existe sinal de compra verificável e dentro da validade (pedido explícito, vaga aberta, unidade nova, anúncio novo ou parado, troca de executivo)?",
+      "como_medir": "Somar pontos dos sinais ativos (teto 100): vaga do CARGO-ALVO 25, vaga genérica 10, troca de executivo de marketing/vendas 25, pedido explícito em comunidade 35, ex-cliente que mudou de empresa 35, CNPJ/unidade nova 20, anúncio novo ou parado 15. Fator de frescor: ×1 (0-2 dias), ×0,75 (3-7 dias), ×0,5 até vencer. Sinal < 48 h em T1: abordar no mesmo dia útil.",
+      "evidencia_exigida": [
+        "link ou print do sinal",
+        "data do sinal",
+        "validade conferida"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "nenhum sinal ou só sinal vencido",
+          "exemplo": "vaga de marketing de 4 meses atrás"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "1 sinal fraco (anúncio novo, review negativo)",
+          "exemplo": "começou a anunciar há 20 dias"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "sinal médio (vaga do cargo-alvo, executivo novo) com frescor ≥ 0,75",
+          "exemplo": "vaga de SDR aberta há 5 dias"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "sinal forte ou 2 médios somados",
+          "exemplo": "unidade nova + vaga de atendimento"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "pedido explícito recente ou ex-cliente que mudou de empresa",
+          "exemplo": "'alguém indica agência de tráfego?' postado há 2 dias"
+        }
+      ],
+      "docs_base": [
+        "pesquisa.prospeccao.icp-sinais-intencao",
+        "growth.social-selling.social-selling-2026",
+        "growth.outbound.linkedin-abm"
+      ]
+    },
+    {
+      "id": "acesso_decisor",
+      "nome": "Acesso ao decisor",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "1/9 na régua de nicho (decisor único). Venda com comitê pede outro método de qualificação, mais longo.",
+      "pergunta": "Sabemos quem decide (nome e cargo) e temos um canal direto e permitido para falar com essa pessoa?",
+      "como_medir": "Identificar decisor (dono em PME; comprador econômico em conta com comitê) e canal (telefone do negócio, LinkedIn, e-mail corporativo) com base legal para contato.",
+      "evidencia_exigida": [
+        "cargo do decisor",
+        "canal e base legal do contato (legítimo interesse/opt-in)"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "decisor desconhecido",
+          "exemplo": "só e-mail genérico contato@"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "sabemos o cargo, sem canal",
+          "exemplo": "conta grande com compras e jurídico"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "decisor identificado, canal indireto",
+          "exemplo": "recepção que repassa"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "decisor e canal direto",
+          "exemplo": "LinkedIn ativo do dono"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "decisor único, canal direto e conexão ou aquecimento prévio",
+          "exemplo": "dono que já comentou conteúdo nosso"
+        }
+      ],
+      "docs_base": [
+        "operacao.vendas.qualificacao-fechamento-servico",
+        "growth.outbound.linkedin-abm",
+        "operacao.lgpd.lgpd-prospeccao-legitimo-interesse"
+      ]
+    },
+    {
+      "id": "orcamento",
+      "nome": "Orçamento (capacidade de pagar)",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Planilha-base de encaixe: capacidade de pagar = 15 de 100 pontos (≈ 0,075 do total, arredondado para 0,10).",
+      "pergunta": "A empresa já investe em anúncio ou serviço parecido, num valor compatível com o nosso preço?",
+      "como_medir": "Anúncio ativo na Ad Library/Central de Transparência; porte e ticket médio; contratação anterior de agência.",
+      "evidencia_exigida": [
+        "anúncio ativo ou gasto anterior",
+        "estimativa de ticket ou porte"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "sem sinal de verba",
+          "exemplo": "nunca anunciou, faturamento de MEI"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "verba provável, nunca investiu",
+          "exemplo": "empresa média sem anúncio"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "investe pouco, abaixo do nosso piso",
+          "exemplo": "impulsiona post às vezes"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "anúncio ativo contínuo",
+          "exemplo": "campanhas rodando há meses"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "anúncio ativo + já paga agência ou ferramenta no nosso valor",
+          "exemplo": "troca de agência em andamento"
+        }
+      ],
+      "docs_base": [
+        "pesquisa.prospeccao.icp-sinais-intencao",
+        "oferta.pricing.pricing-servicos"
+      ]
+    }
+  ]
+}

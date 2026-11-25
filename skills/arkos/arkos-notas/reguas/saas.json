@@ -1,0 +1,398 @@
+{
+  "regua": "saas",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Ideia ou produto SaaS (antes ou depois do lançamento). Antes do lançamento, critérios de retenção e unit economics usam o proxy indicado em como_medir e a nota máxima fica limitada a 74 nesses critérios até existir coorte real.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "media",
+  "nota_pesos": "A base dá uma ORDEM, não magnitudes: auditar primeiro retenção, depois ativação, depois conversão e só então aquisição; 'sem achatamento da curva de coorte não há PMF e nenhuma outra métrica importa'; validação de ideia diz que só pagamento valida (70% dizem que pagariam e quase nenhum paga); unit economics antes de escalar (só 13% de 800+ SaaS combinam NRR alto e payback baixo). Mercado e concorrência ficam embaixo porque a base trata mercado como corte (≥ 10x a meta, de baixo para cima) e mostra que ser pioneiro não é vantagem (pioneiros falham 47% e lideram 11% em 50 categorias). Magnitudes por nível de prioridade: 0,25 / 0,20 / 0,15+0,15 / 0,10 / 0,08 / 0,07. Recalibrar com aprendizado.jsonl (nota x MRR em 6 meses). Auditoria: dois perfis por estágio (entrada 'perfil': 'pre_lancamento' ou 'no_ar'); sem perfil valem os pesos de 'no_ar'. No pré-lançamento retenção é medida pelo proxy (frequência da dor). Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "criterios": [
+    {
+      "id": "retencao",
+      "nome": "Retenção (a curva de coorte achata)",
+      "acesso": "todos",
+      "peso": 0.25,
+      "base_peso": "1º na ordem de auditoria da base. Referências: GRR mediano B2B ~90-91% e NRR ~101% (1.000+ SaaS privados, 2025); em billing de ~3.500 empresas, NRR B2B mediano 82%, produto 'AI-native' GRR 40% e plano < US$ 50/mês GRR 23%.",
+      "pergunta": "A coorte de pagantes estabiliza (achata) até o mês 3 com GRR anualizado ≥ 80%, ou, antes do lançamento, a dor é recorrente (semanal) e hoje resolvida com gambiarra contínua?",
+      "como_medir": "Depois de lançar: % de logos e de receita ativos por coorte nos meses 1, 2, 3, 6, 12; GRR e NRR; survey 'muito desapontado' (corte 40%) com ativos. Antes: frequência da dor em 10+ conversas e gasto recorrente atual com a gambiarra.",
+      "evidencia_exigida": [
+        "tabela de coorte ou, antes do lançamento, frequência da dor em n conversas",
+        "GRR/NRR com período",
+        "resultado do survey de PMF com n"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "curva vai a zero; churn mensal > 15%; ou dor ocasional (1x por ano)",
+          "exemplo": "58% ativos no mês 3 sem achatar (vida ~6 meses)"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "churn mensal 8-15%; PMF < 25% muito desapontado",
+          "exemplo": "ferramenta de IA barata com GRR ~40%"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "achata, GRR 80-89%; PMF 25-39% ou ≥ 40% só num segmento pequeno; teto deste nível antes do lançamento",
+          "exemplo": "31% no geral, 47% num segmento"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "GRR 90-94%, NRR ~100%; PMF ≥ 40% com 80+ respostas",
+          "exemplo": "coorte de 3 meses com GRR 92%"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "GRR ≥ 95% e NRR ≥ 110%",
+          "exemplo": "produto de fluxo diário com expansão por assento"
+        }
+      ],
+      "docs_base": [
+        "auditoria.saas.lancar-saas-metricas",
+        "auditoria.unit-economics.cac-ltv-payback",
+        "design.saas.ux-onboarding-dashboard"
+      ]
+    },
+    {
+      "id": "dor",
+      "nome": "Dor validada com pagamento",
+      "acesso": "todos",
+      "peso": 0.2,
+      "base_peso": "Escada de compromisso da base: dinheiro > reunião > clique > e-mail; '70% disseram que pagariam, muito poucos pagaram'. Sem dor paga, retenção não chega a existir. Auditoria: lista de espera converteu 0,9% na mediana de 28 listas (10 com zero pagante); 50 DMs renderam 5 pagantes antes do código; produtos que viraram referência tiveram 11 e 40 compromissos de uso antes de construir.",
+      "pergunta": "Há pagamento (sinal, pré-venda, piloto) do público pagador — 3+ pagamentos e ≥ 10% dos abordados qualificados — ou, no mínimo, 11+ compromissos nominais de uso? Lista de espera e 'eu usaria' nunca contam como pagamento.",
+      "como_medir": "Entrevistas de problema (sem vender) + teste de compromisso (pré-venda, piloto pago, sinal). Contar pagantes ÷ abordados; conferir que o entrevistado é o pagador econômico.",
+      "evidencia_exigida": [
+        "nº de conversas com episódio concreto",
+        "nº de pagamentos/sinais",
+        "comprovante ou registro do pagamento"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "só 'eu usaria', survey ou lista de espera",
+          "exemplo": "lista de espera de 400 nomes, 0 pago"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "dor confirmada em 10+ conversas, sem compromisso",
+          "exemplo": "'me avisa quando estiver pronto'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "11+ compromissos nominais de uso, ou 1-2 pagamentos (sinal, pré-venda, piloto)",
+          "exemplo": "2 pilotos pagos"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "3+ pagamentos e ≥ 10% dos abordados qualificados pagando",
+          "exemplo": "5 pré-vendas em 50 abordagens diretas"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "pagamentos recorrentes antes do produto completo",
+          "exemplo": "MVP manual pago por 5 clientes há 2 meses"
+        }
+      ],
+      "docs_base": [
+        "oferta.validacao.validar-nicho-48h",
+        "pesquisa.validacao.validar-nicho-48h",
+        "pesquisa.publico.entrevista-cliente-mom-test"
+      ]
+    },
+    {
+      "id": "unit_economics",
+      "nome": "Unit economics (LTV:CAC, payback, margem bruta)",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "Regra da base: unit economics antes de escalar. Payback mediano de SaaS em 2025: 16 meses (198 empresas); só 13% combinam NRR alto e payback baixo; régua clássica LTV:CAC ≥ 3 e payback < 12 meses (SMB).",
+      "pergunta": "LTV:CAC sobre margem é ≥ 3 e o payback do CAC é < 12 meses (ou, antes do lançamento, o preço planejado e o CAC estimado do canal dão isso)?",
+      "como_medir": "LTV = ARPA × margem bruta ÷ churn; CAC por canal (cadastro, ativado, pagante); payback = CAC ÷ (ARPA × margem). Antes: CAC do canal por benchmark + preço testado. Usar a margem bruta real: SaaS com IA pesada fica em ~60-66% (não 80% fixo), medida no custo do usuário P90.",
+      "evidencia_exigida": [
+        "ARPA, margem bruta e churn usados",
+        "CAC por canal com fonte",
+        "cálculo do payback"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "LTV:CAC < 1 ou payback > 36 meses",
+          "exemplo": "plano de US$ 9 com CAC pago de US$ 120"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "LTV:CAC 1-2; payback 18-36 meses",
+          "exemplo": "SMB com churn alto e CAC de anúncio"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "LTV:CAC 2-3; payback 12-18 meses",
+          "exemplo": "perto da mediana do mercado"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "LTV:CAC 3-5; payback 6-12 meses; margem ≥ 70%",
+          "exemplo": "payback ~7,6 meses com margem 80%"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "LTV:CAC > 5; payback < 6 meses",
+          "exemplo": "aquisição orgânica/indicação dominante"
+        }
+      ],
+      "docs_base": [
+        "auditoria.unit-economics.cac-ltv-payback",
+        "auditoria.unit-economics.margem-contribuicao-coortes-payback",
+        "auditoria.saas.lancar-saas-metricas"
+      ]
+    },
+    {
+      "id": "distribuicao",
+      "nome": "Distribuição (canal para chegar ao comprador)",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "Aquisição é a última etapa da ordem de auditoria, mas a base mede três CACs (cadastro, ativado, pagante) e mostra que canal sem custo medido esconde o problema; mesmo nível de prioridade de unit economics, porque um define o CAC do outro. Auditoria: lançamento em vitrine de produtos típico = 686 visitantes, 100 cadastros, 3 pagantes, efeito some no dia; 20+ B2B que viraram gigantes não usaram anúncio nos 10 primeiros clientes.",
+      "pergunta": "Existe canal provado — 3+ pagantes do ICP vindos do MESMO canal nomeado, repetível na semana seguinte — a um CAC compatível com o preço?",
+      "como_medir": "Testar 1-2 canais (outbound, conteúdo, anúncio, comunidade, parceria) com meta de CAC; medir CAC por pagante, não por cadastro.",
+      "evidencia_exigida": [
+        "canal testado e volume",
+        "CAC por pagante medido",
+        "taxa trial/free → pago"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "nenhum canal testado; 'vai viralizar'",
+          "exemplo": "plano de lançamento só no Product Hunt"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "canal testado sem pagante, ou lista de espera grande sem pagante",
+          "exemplo": "100 cadastros por anúncio, 0 pago"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "canal traz pagantes, CAC acima do alvo",
+          "exemplo": "trial sem cartão converte 2% (bom é 4-6%)"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "1 canal repetível no CAC alvo",
+          "exemplo": "outbound com 34% trial→pago"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "2+ canais repetíveis ou canal próprio (audiência, parceria exclusiva)",
+          "exemplo": "integração em marketplace + comunidade própria"
+        }
+      ],
+      "docs_base": [
+        "auditoria.saas.lancar-saas-metricas",
+        "growth.outbound.cold-email-cadencia-eua",
+        "growth.comunidade.construir-comunidade",
+        "pesquisa.prospeccao.primeiros-clientes-design-partners"
+      ]
+    },
+    {
+      "id": "tempo_ate_receita",
+      "nome": "Tempo até a primeira receita",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Auditoria (441 primeiras vendas): do início do projeto a mediana até o 1º pagamento é ~4 meses e o quartil mais rápido fica abaixo de 7 semanas; do lançamento a mediana é 7 dias e 96% receberam em até 3 meses.",
+      "pergunta": "Contado do INÍCIO do projeto, o primeiro pagamento chega em até 7 semanas?",
+      "como_medir": "Relógio desde o início do projeto (não do lançamento); data real ou prevista do 1º pagamento; 3+ meses depois do lançamento sem pagante = 0-24.",
+      "evidencia_exigida": [
+        "data prevista ou real do 1º pagamento",
+        "o que é entregue nesse pagamento"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "> 9 meses do início, ou 3+ meses depois do lançamento sem pagante",
+          "exemplo": "plataforma completa antes de cobrar"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "4-9 meses do início",
+          "exemplo": "B2B enterprise com piloto longo"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "7 semanas a 4 meses do início",
+          "exemplo": "MVP em 2 meses e venda depois"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "≤ 7 semanas do início",
+          "exemplo": "design partners pagos no mês 1"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "≤ 3 semanas do início, ou já recebe (serviço manual que vira produto)",
+          "exemplo": "serviço produtizado faturando, software automatiza"
+        }
+      ],
+      "docs_base": [
+        "pesquisa.prospeccao.primeiros-clientes-design-partners",
+        "auditoria.saas.lancar-saas-metricas",
+        "programacao.saas.stack-saas-do-zero-2026"
+      ]
+    },
+    {
+      "id": "tamanho_mercado",
+      "nome": "Tamanho de mercado (de baixo para cima)",
+      "acesso": "todos",
+      "peso": 0.08,
+      "base_peso": "Heurística, sem estudo que dê o múltiplo (fonte única): mercado como corte, SAM de baixo para cima ≥ 10x a meta. Lacuna declarada para a próxima rodada.",
+      "pergunta": "O SAM contado de baixo para cima (empresas × preço) é pelo menos 10 vezes a meta de receita de 3 anos?",
+      "como_medir": "Contar empresas/pessoas do ICP em cadastro aberto (CNPJ, censo, associação) × preço; conferir top-down só como checagem.",
+      "evidencia_exigida": [
+        "contagem com fonte e data",
+        "conta SAM = n × preço",
+        "meta de 3 anos"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "SAM < 3x a meta ou só número top-down",
+          "exemplo": "'mercado de US$ 50 bi' de relatório"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "SAM 3-5x a meta",
+          "exemplo": "nicho regional de poucas centenas"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "SAM 5-10x a meta",
+          "exemplo": "nicho de 2.000 empresas a US$ 100/mês"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "SAM 10-50x a meta",
+          "exemplo": "12 mil estabelecimentos num estado"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "SAM > 50x a meta, com expansão adjacente clara",
+          "exemplo": "categoria nacional com milhões de pequenos negócios"
+        }
+      ],
+      "docs_base": [
+        "pesquisa.mercado.dimensionar-mercado-tam-sam-som",
+        "pesquisa.prospeccao.icp-sinais-intencao"
+      ]
+    },
+    {
+      "id": "concorrencia",
+      "nome": "Concorrência e espaço de posição",
+      "acesso": "todos",
+      "peso": 0.07,
+      "base_peso": "Peso baixo por dado: ser pioneiro não protege (pioneiros falham 47% e lideram 11% em 50 categorias) e concorrente anunciando há 90+ dias é sinal de demanda. Pontua o espaço de posição, não a ausência de concorrente.",
+      "pergunta": "Há concorrentes provando demanda e um segmento ou posição que eles atendem mal, com motivo verificável (reviews, preço, recurso)?",
+      "como_medir": "Mapa de concorrentes; reviews negativos e reclamações; preço; anúncios ativos há > 90 dias; segmento mal atendido.",
+      "evidencia_exigida": [
+        "lista de concorrentes com preço",
+        "reclamações recorrentes com fonte",
+        "posição escolhida"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "líder forte atende bem o mesmo segmento, ou nenhum sinal de demanda",
+          "exemplo": "clone de ferramenta dominante sem diferença"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "diferença só de preço",
+          "exemplo": "'mais barato que X'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "segmento mal atendido, sem prova",
+          "exemplo": "'ninguém atende MEI' sem reviews"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "segmento mal atendido com reclamações recorrentes",
+          "exemplo": "reviews de concorrente pedindo nota fiscal de serviço"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "concorrentes provam demanda e a lacuna é estrutural (canal, idioma, regra local)",
+          "exemplo": "ferramenta dos EUA sem Pix nem nota fiscal BR"
+        }
+      ],
+      "docs_base": [
+        "pesquisa.concorrencia.analise-concorrente-posicionamento",
+        "pesquisa.publico.voz-do-cliente-jtbd-mineracao"
+      ]
+    }
+  ],
+  "perfis": {
+    "pre_lancamento": {
+      "descricao": "ideia ou produto sem coorte de 3 meses: quem trava é alcance e dor (60 de 106 fundadores parados não tinham nenhum usuário; só 68 de 199 nomeavam o comprador).",
+      "soma_1": true,
+      "pesos": {
+        "dor": 0.3,
+        "distribuicao": 0.2,
+        "retencao": 0.15,
+        "unit_economics": 0.1,
+        "tempo_ate_receita": 0.1,
+        "tamanho_mercado": 0.08,
+        "concorrencia": 0.07
+      }
+    },
+    "no_ar": {
+      "descricao": "no ar com coorte ≥ 3 meses: ordem de auditoria retenção > ativação > conversão > aquisição.",
+      "soma_1": true,
+      "pesos": {
+        "retencao": 0.25,
+        "dor": 0.2,
+        "unit_economics": 0.15,
+        "distribuicao": 0.15,
+        "tempo_ate_receita": 0.1,
+        "tamanho_mercado": 0.08,
+        "concorrencia": 0.07
+      }
+    }
+  }
+}

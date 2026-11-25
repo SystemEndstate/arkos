@@ -1,0 +1,364 @@
+{
+  "regua": "copy",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Texto de venda: landing, página de produto, e-mail de oferta, legenda/texto de anúncio, roteiro. VSL e advertorial têm critério próprio só VIP. 'Aprovar ≥ 75' nesta régua significa PRONTA PARA TESTE, não 'vai converter': com tráfego acima da amostra mínima, a decisão final é do teste.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "media",
+  "nota_pesos": "Pesos pelo tamanho do efeito medido: headline (+12% de receita com troca de headline em experimento controlado) > prova (5 avaliações = +270% de chance de compra, estudo independente; prova genérica = efeito nulo) > fluidez (conversão cai de 12,9% para 6,6% em serviços quando o texto sobe de nível de leitura, fornecedor; leitor lê no máximo 28% das palavras, estudo) = consciência (sem número direto, mas define a estrutura inteira da peça) > especificidade e CTA (sem dado de peso ou dado fraco) > conformidade legal (portão com veto). Recalibrar com aprendizado.jsonl (nota × conversão da página). Ajustes da auditoria: prova 0,20 → 0,25 e CTA 0,10 → 0,05 (meta-análise de 6.700 testes); só ~1/3 das ideias melhora a métrica, então nota não prevê conversão; o par nota × conversão vai ao aprendizado.jsonl. Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "vetos": "conformidade_legal abaixo de 25 = 'descartar', qualquer que seja a nota final.",
+  "aplicabilidade": "Critérios VIP com 'aplica_se' só entram no cálculo quando a peça for daquele tipo; fora disso saem do cálculo (não contam 0).",
+  "criterios": [
+    {
+      "id": "headline",
+      "nome": "Gancho / headline e lead",
+      "acesso": "todos",
+      "peso": 0.25,
+      "base_peso": "Troca de headline deu +12% de receita em experimento controlado (motor de busca, 2017); leitor lê no máximo 28% das palavras (estudo de rastreio, 45 mil visualizações). Peso 0,25 mantido.",
+      "pergunta": "A headline fala de interesse próprio do leitor certo (resultado, dor ou notícia dele), em palavras do cliente, e o lead faz ler a próxima linha?",
+      "como_medir": "Antes: escrever 10-20 headlines, manter 3; checar se usa frase do VoC; se casa com o nível de consciência. Depois: teste A/B com amostra mínima (sem espiar resultado antes do fim).",
+      "evidencia_exigida": [
+        "headline e 2 alternativas",
+        "origem da frase (review, entrevista) se for VoC"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "headline de marca ou genérica, sem leitor nem benefício",
+          "exemplo": "'Bem-vindo à Clínica X'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "benefício vago ou clickbait",
+          "exemplo": "'Transforme sua vida hoje'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "benefício claro, linguagem de marketing",
+          "exemplo": "'Mais pacientes para sua clínica'"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "interesse próprio + especificidade + palavras do cliente",
+          "exemplo": "'Agenda cheia sem depender de indicação: 40 avaliações/mês para dentistas de bairro'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "frase literal do cliente que nomeia o leitor e a tensão, já vencedora em teste",
+          "exemplo": "'If you think you need rehab, you do'"
+        }
+      ],
+      "docs_base": [
+        "copy.landing.headlines-e-leads",
+        "copy.avatar.copy-com-pesquisa-vs-sem-pesquisa",
+        "copy.fundamentos.pesquisa-voc-para-copy"
+      ]
+    },
+    {
+      "id": "prova",
+      "nome": "Prova",
+      "acesso": "todos",
+      "peso": 0.25,
+      "base_peso": "Meta-análise de 6.700 testes: prova social +2,3% na receita por visitante, 2ª maior categoria (só escassez real ficou acima, +2,9%); 5 avaliações = +270% de chance de compra (estudo independente); prova genérica = efeito nulo. Peso 0,25 (recebe 0,05 do CTA).",
+      "pergunta": "A copy traz prova específica e verificável (números com contexto, depoimentos identificáveis, demonstração, avaliações) já na segunda tela?",
+      "como_medir": "Listar cada prova com origem; ver em que tela aparece; conferir autorização dos depoimentos.",
+      "evidencia_exigida": [
+        "origem de cada prova",
+        "posição na página"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "sem prova ou prova inventada",
+          "exemplo": "depoimento sem nome, foto de banco de imagem"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "prova genérica",
+          "exemplo": "'milhares de clientes satisfeitos'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "prova real, só no fim da página",
+          "exemplo": "depoimentos no rodapé"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "prova específica e verificável na tela 2",
+          "exemplo": "nota 4,6 com 312 avaliações + caso com número"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "prova específica, por objeção, ao longo da página",
+          "exemplo": "cada objeção respondida com um caso ou dado"
+        }
+      ],
+      "docs_base": [
+        "design.landing.estrutura-landing-que-converte",
+        "copy.landing.estrutura-landing-conversao-2026"
+      ]
+    },
+    {
+      "id": "nivel_consciencia",
+      "nome": "Nível de consciência e sofisticação",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "Sem número direto de peso; a base trata como o critério que define a estrutura da peça (5 níveis de consciência × 5 de sofisticação). Sinal indireto: mostrar oferta/desconto/depoimento a quem ainda não sabe do problema é o erro mais comum apontado em contas de e-commerce. Lacuna declarada: nenhum estudo de peso achado (auditoria 2026-11-23).",
+      "pergunta": "A abertura e a estrutura combinam com o nível de consciência do leitor que chega (do inconsciente do problema ao pronto para comprar) e com a sofisticação do mercado?",
+      "como_medir": "Identificar a origem do tráfego e o nível; conferir se a estrutura segue o nível (ex.: inconsciente abre por história/identificação; pronto abre por oferta). Usar pesquisa de avatar ou pós-compra.",
+      "evidencia_exigida": [
+        "nível de consciência declarado e de onde vem o tráfego",
+        "pesquisa do avatar que o sustenta"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "estrutura oposta ao nível",
+          "exemplo": "desconto e garantia para tráfego frio que não sabe do problema"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "nível não definido; mistura",
+          "exemplo": "página que fala com todos os níveis ao mesmo tempo"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "nível certo, sofisticação ignorada",
+          "exemplo": "promessa direta num mercado que já ouviu tudo"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "nível e sofisticação certos",
+          "exemplo": "mercado saturado: abre pelo mecanismo"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "nível certo, comprovado por pesquisa, com página por nível",
+          "exemplo": "pós-compra mostrou comprador 55+ → anúncio → artigo → produto"
+        }
+      ],
+      "docs_base": [
+        "copy.fundamentos.resposta-direta-principios",
+        "criativos.estrategia.consciencia-sofisticacao-anuncio-e-pagina",
+        "pesquisa.mecanismo.mecanismo-unico-sofisticacao"
+      ]
+    },
+    {
+      "id": "fluidez",
+      "nome": "Fluidez e legibilidade",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "Conversão de serviços cai 49% (12,9% → 6,6%) de leitura de 5ª-7ª série para 8ª-9ª; SaaS de 12,9% para 2,1% (fornecedor, grande amostra). Leitor lê no máximo 28% das palavras (estudo). 81% das visitas são mobile.",
+      "pergunta": "O texto lê fácil no celular (frases curtas, nível de 7ª série ou abaixo, escaneável) e cada linha puxa a próxima?",
+      "como_medir": "Índice de legibilidade (nível ≤ 7ª série); leitura no celular; tamanho por vertical (serviços 275-745 palavras, SaaS 250-725, e-commerce 285-930).",
+      "evidencia_exigida": [
+        "índice de legibilidade",
+        "contagem de palavras",
+        "print mobile"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "blocos longos, jargão, nível universitário",
+          "exemplo": "parágrafo de 8 linhas com termos técnicos"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "nível 10ª+ série ou muito fora do tamanho do vertical",
+          "exemplo": "landing de serviço com 2.000 palavras"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "nível 8ª-9ª, escaneável em parte",
+          "exemplo": "subtítulos bons, frases longas"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "nível ≤ 7ª série, escaneável, tamanho do vertical",
+          "exemplo": "frases curtas, subtítulos que contam a história"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima e soa como gente falando",
+          "exemplo": "lido em voz alta sem tropeço"
+        }
+      ],
+      "docs_base": [
+        "copy.landing.estrutura-landing-conversao-2026",
+        "copy.fundamentos.voz-tom-e-spoken-copy"
+      ]
+    },
+    {
+      "id": "especificidade",
+      "nome": "Especificidade",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Sem dado de peso ('plausível, sem meta-análise de conversão'); princípio repetido nos clássicos de resposta direta (fatos em vez de adjetivo). Peso moderado até a retro medir.",
+      "pergunta": "A copy troca adjetivos por fatos (números, prazos, nomes, mecanismo concreto) tirados de pesquisa e não de imaginação?",
+      "como_medir": "Contar afirmações com número/fato verificável x adjetivos; conferir origem no VoC.",
+      "evidencia_exigida": [
+        "lista de fatos usados com origem"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "só adjetivos",
+          "exemplo": "'o melhor, mais rápido, mais completo'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "poucos fatos soltos",
+          "exemplo": "um número sem contexto"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "fatos em parte das seções",
+          "exemplo": "prazo e preço claros, benefício vago"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "fatos na maioria das afirmações, com origem",
+          "exemplo": "'entrega em 48 h para capitais, 312 avaliações'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "cada promessa com fato e mecanismo concreto",
+          "exemplo": "explica como o resultado acontece, passo a passo"
+        }
+      ],
+      "docs_base": [
+        "copy.fundamentos.pesquisa-voc-para-copy"
+      ]
+    },
+    {
+      "id": "cta",
+      "nome": "CTA",
+      "acesso": "todos",
+      "peso": 0.05,
+      "base_peso": "Meta-análise de 6.700 testes: texto de CTA −0,3%, troca de botão −0,2%, cor 0,0% — efeito médio nulo. Mede atrito, não o texto do botão. Peso 0,05.",
+      "pergunta": "Há uma única ação principal, no canal que o público usa, com atrito mínimo (≤ 3-4 campos, sem ações concorrentes)?",
+      "como_medir": "Contar ações concorrentes; posição do CTA; campos do formulário (≤ 3-4).",
+      "evidencia_exigida": [
+        "lista de CTAs e posições",
+        "nº de campos do formulário"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "sem CTA ou várias ações competindo",
+          "exemplo": "'saiba mais', 'fale conosco' e 'compre' juntos"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "CTA só no fim ou formulário longo",
+          "exemplo": "8 campos para pedir orçamento"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "1 ação clara, pouca repetição",
+          "exemplo": "botão só na dobra"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "1 ação repetida 3-4x, ≤ 4 campos, canal certo",
+          "exemplo": "botão de WhatsApp com mensagem pronta"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima + reversão de risco junto do CTA",
+          "exemplo": "'agende — se não comparecer o horário, não cobra'"
+        }
+      ],
+      "docs_base": [
+        "copy.landing.estrutura-landing-conversao-2026",
+        "design.landing.estrutura-landing-que-converte",
+        "copy.whatsapp.copy-e-scripts-whatsapp-br"
+      ]
+    },
+    {
+      "id": "conformidade_legal",
+      "nome": "Conformidade legal",
+      "acesso": "todos",
+      "peso": 0.05,
+      "veto": true,
+      "base_peso": "Portão, sem dado de peso: CDC arts. 36-38 (publicidade identificável, ônus da prova do anunciante, proibição de enganosa), CONAR, Anvisa; FTC ('transparência') nos EUA.",
+      "pergunta": "A copy está livre de promessa enganosa, alegação de saúde/ganho sem prova, urgência falsa e publicidade disfarçada, com as divulgações exigidas?",
+      "como_medir": "Checklist CDC/CONAR/Anvisa (BR) ou FTC (EUA) para cada alegação; urgência confere com prazo real.",
+      "evidencia_exigida": [
+        "checklist legal preenchido",
+        "prova de cada alegação de resultado"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "alegação proibida ou urgência falsa",
+          "exemplo": "melhora de neuropatia em 24 h; contador que reinicia"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "promessa de resultado sem prova",
+          "exemplo": "'ganhe R$ 10 mil no 1º mês'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "zona cinza, sem disclaimer",
+          "exemplo": "depoimento de resultado sem 'resultados variam'"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "alegações provadas, divulgações presentes",
+          "exemplo": "resultado típico informado"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima + revisão registrada",
+          "exemplo": "checklist arquivado com fontes"
+        }
+      ],
+      "docs_base": [
+        "copy.fundamentos.kennedy-resposta-direta-no-bs",
+        "criativos.estrategia.consciencia-sofisticacao-anuncio-e-pagina",
+        "criativos.estatico.anuncio-nativo-de-imagem"
+      ]
+    }
+  ]
+}

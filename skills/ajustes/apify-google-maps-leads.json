@@ -1,0 +1,9 @@
+[
+  {
+    "arquivo": "SKILL.md",
+    "de": "description: Build a local",
+    "para": "description: >-\n  Build a local",
+    "porque": "frontmatter YAML inválido no commit fixo (dois-pontos sem aspas na descrição): sem o ajuste o Claude Code não lê a skill",
+    "fonte": "skill-scanner (Invalid Frontmatter) + yaml.safe_load"
+  }
+]

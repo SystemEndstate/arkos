@@ -1,0 +1,414 @@
+{
+  "regua": "produto-vender",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Produto a vender (infoproduto, serviço produtizado, SaaS simples ou produto físico). Não é o nicho de cliente: isso é a régua nicho-cliente. Produto físico de loja tem critério próprio só VIP.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "baixa",
+  "nota_pesos": "A base não mede o peso relativo dos critérios de produto; dá uma ORDEM e portões. Demanda paga primeiro (escada dinheiro > reunião > clique > e-mail; 70% dizem que pagariam e quase ninguém paga). Margem é portão (acima do break-even depois de todas as taxas) e segundo nível. Potencial de criativo pesa porque o retorno é concentrado: em 1,34 mi de anúncios de 158 marcas, o top 1% gerou 41% do valor e o anúncio mediano perdeu dinheiro em 60 dias — o produto precisa sustentar muitos ângulos. Recompra entra como critério (não estava na lista-base) porque a base concilia 'o sistema vende, o produto segura a recompra'. Saturação pesa pouco por dado: a base mostra que produto saturado quase nunca falha pelo produto e converte saturação em exigência de mecanismo. Logística sem dado de peso. Magnitudes por nível: 0,30 / 0,25 / 0,15 / 0,10 / 0,10 / 0,10. Recalibrar com aprendizado.jsonl (nota × lucro em 60 dias). Auditoria: perfis 'loja' e 'loja_consumivel' (VIP); veto regulatório separado do checklist; recompra por vertical. Auditoria do gesso aprovada em 2026-11-23 (engine/AUDITORIA-GESSO-2026-11-23.md).",
+  "vetos": "margem abaixo de 25 (abaixo do break-even depois de taxas) = 'descartar'; no perfil loja, margem abaixo de 75 (CM2 < 1,25 × CPA). regulatorio_produto abaixo de 25 = 'descartar' (peso 0: portão que não soma).",
+  "aplicabilidade": "logistica: para infoproduto/SaaS lê-se como entrega e suporte (acesso, área de membros, atendimento). produto_fisico_loja (VIP) só entra para produto físico de e-commerce/marketplace.",
+  "criterios": [
+    {
+      "id": "demanda",
+      "nome": "Demanda provada com dinheiro",
+      "acesso": "todos",
+      "peso": 0.3,
+      "base_peso": "1º na ordem da base: só pagamento valida. Réguas: ≥ 3 pagantes/sinais em 48 h = seguir, 1-2 = ajustar; clique no preço em tráfego frio ≥ 2% seguir, < 1% (n ≥ 200, CTR normal) largar; concorrentes anunciando há > 90 dias = sinal de demanda. Estatística: 200 visitas a 2% dão intervalo de 0,1% a 3,9%; parar o teste cedo infla falso positivo de 5% para 26%.",
+      "pergunta": "Há pagamento ou sinal pago em tráfego frio (≥ 3 em 48 h ou ≥ 2% de clique no preço com amostra suficiente) e concorrentes vendendo algo parecido há mais de 90 dias?",
+      "como_medir": "Pré-venda/fake door com preço em tráfego frio; contar pagamentos; amostra mínima com intervalo de confiança; Ad Library (anúncios com 30+ dias já são sobreviventes); Trends 24 meses (queda > 30% = rampa lenta).",
+      "evidencia_exigida": [
+        "pagamentos ou sinais com comprovante",
+        "taxa de clique no preço com n",
+        "concorrentes com tempo no ar",
+        "curva de busca"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "só opinião/survey; ou clique no preço < 1% com n ≥ 200",
+          "exemplo": "'70% disseram que comprariam'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "interesse (lista de espera, cliques) sem pagamento",
+          "exemplo": "300 e-mails, 0 venda"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "1-2 pagantes ou clique no preço 1-2%",
+          "exemplo": "2 pré-vendas na 1ª rodada"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "≥ 3 pagantes em 48 h ou clique no preço ≥ 2% com amostra",
+          "exemplo": "3 pré-vendas + concorrentes há 4 meses no ar"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "vendas recorrentes em tráfego frio com intervalo de confiança fechado",
+          "exemplo": "vende todo dia a CPA abaixo do equilíbrio"
+        }
+      ],
+      "docs_base": [
+        "oferta.validacao.validar-nicho-48h",
+        "pesquisa.validacao.validar-nicho-48h",
+        "pesquisa.concorrencia.ad-library-com-dados",
+        "pesquisa.mercado.dimensionar-mercado-tam-sam-som"
+      ]
+    },
+    {
+      "id": "margem",
+      "nome": "Margem depois de todas as taxas",
+      "acesso": "todos",
+      "peso": 0.25,
+      "veto": true,
+      "base_peso": "Portão + 2º nível. Réguas: margem bruta mediana de marcas ~55% e contribuição ~28% com frete e taxas (fornecedor, ~500 marcas); markup mínimo 3x (relato); ROAS/MER de equilíbrio = 1 ÷ margem de contribuição, exigir 20-25% acima do equilíbrio; LTV:CAC meta 3:1, piso 2:1. Divergência: a definição de margem muda o número (55% x 80%) — fixar contribuição depois de frete, taxas de plataforma/gateway e devolução. Auditoria: perfil loja veta margem abaixo de 75 (CM2 < 1,25 × CPA).",
+      "pergunta": "A margem de contribuição por venda (depois de custo, frete, taxa de plataforma/gateway, imposto e devolução) cobre o CPA típico do canal com pelo menos 20% de folga?",
+      "como_medir": "Planilha de contribuição por unidade: preço − custo − frete − taxas (ex.: plataforma de infoproduto 9,9% + R$ 2,49; marketplace por item) − imposto − devolução. Comparar com CPA típico do canal.",
+      "evidencia_exigida": [
+        "planilha de contribuição por unidade com cada taxa",
+        "CPA típico do canal com fonte"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "abaixo do break-even depois das taxas",
+          "exemplo": "item de R$ 20 com taxa efetiva de 36% e margem < 10%"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "cobre o CPA sem folga; markup < 2x",
+          "exemplo": "contribuição igual ao CPA"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "folga de 0-20% sobre o CPA; markup 2-3x",
+          "exemplo": "contribuição 28%, CPA consome quase tudo"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "folga ≥ 25% (CM2 ≥ 1,25 × CPA); markup ≥ 3x (≥ 4x em marketplace < R$ 50)",
+          "exemplo": "infoproduto de R$ 497 com CPA de R$ 120"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "folga ≥ 50%; contribuição > 50%",
+          "exemplo": "produto digital com margem ~80% e CPA < 30% do preço"
+        }
+      ],
+      "docs_base": [
+        "oferta.budget.quanto-gastar-em-anuncio",
+        "oferta.produto.familiar-desconhecido-e-novo-mecanismo",
+        "oferta.lancamento.lancar-infoproduto-br",
+        "auditoria.unit-economics.margem-contribuicao-coortes-payback"
+      ]
+    },
+    {
+      "id": "potencial_criativo",
+      "nome": "Potencial de criativo (ângulos, personas, demonstração)",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "Retorno concentrado: top 1% dos anúncios gerou 41% do valor, mediano perdeu dinheiro (1,34 mi de anúncios, 158 marcas) — produto precisa render muitos ângulos para achar o vencedor. Régua de lote: ≥ 3 ângulos e 2 personas; 2-3 ângulos-pilar por persona.",
+      "pergunta": "O produto sustenta pelo menos 3 ângulos e 2 personas diferentes, com resultado demonstrável na tela, sem depender de alegação proibida?",
+      "como_medir": "Listar ângulos (dor, desejo, objeção, prova, mecanismo, comparação) e personas que o produto atende; checar se o resultado é visível em vídeo/imagem; checar alegações proibidas (ex.: antes/depois de corpo em saúde).",
+      "evidencia_exigida": [
+        "lista de ângulos × personas",
+        "como o resultado aparece na tela"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "1 ângulo só, ou o único ângulo forte é proibido",
+          "exemplo": "suplemento que só vende por promessa terapêutica"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "1-2 ângulos, resultado invisível",
+          "exemplo": "produto sem diferença perceptível em vídeo"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "3 ângulos, 1 persona",
+          "exemplo": "um público, várias dores"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "≥ 3 ângulos e ≥ 2 personas, demonstrável",
+          "exemplo": "mesmo produto para 'ao acordar' e 'depois do almoço'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "muitos ângulos/personas e demonstração forte em segundos",
+          "exemplo": "resultado visível na mão durante o vídeo"
+        }
+      ],
+      "docs_base": [
+        "criativos.estrategia.angulos-e-diversidade-andromeda",
+        "oferta.produto.familiar-desconhecido-e-novo-mecanismo",
+        "criativos.estatico.estatico-e-carrossel",
+        "criativos.estatico.anuncio-nativo-de-imagem"
+      ]
+    },
+    {
+      "id": "recompra",
+      "nome": "Recompra e LTV",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Critério acrescentado à lista-base: a base concilia 'o sistema vende, o produto segura a recompra' e manda medir LTV por coorte, não por média. Recompra de mercado 20-30% em geral e 30-40% em consumível (fornecedor). Use o limite inferior do intervalo de confiança da taxa de recompra (n ≥ 100), não a taxa crua. Auditoria: recompra varia 2-5x por vertical e janela; faixas por vertical em 365 dias.",
+      "pergunta": "O produto gera segunda compra, assinatura ou upsell natural (recompra ≥ 30% ou produto seguinte claro)?",
+      "como_medir": "Recompra em janela de 365 dias (ou 90 dias ÷ 0,76) pelo limite inferior do intervalo de confiança (n ≥ 100; n 50-99 é provisório), comparada ao piso da vertical: consumível 35-55%, moda 20-35%, eletrônico 10-20% em 365 dias. Infoproduto/serviço: produto seguinte e taxa de ascensão.",
+      "evidencia_exigida": [
+        "taxa de recompra com n ou produto seguinte definido"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "compra única, sem próximo produto",
+          "exemplo": "item durável sem acessório"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "próximo produto possível, não definido",
+          "exemplo": "curso único sem continuação"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "recompra no piso da vertical ou escada definida sem dado",
+          "exemplo": "consumível com 35% em 365 dias"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "recompra (limite inferior) acima da média da vertical ou ascensão medida",
+          "exemplo": "consumível com 45% em 365 dias"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "recompra no topo da vertical ou assinatura com pedido 2 ≥ 70%",
+          "exemplo": "refil com assinatura estável"
+        }
+      ],
+      "docs_base": [
+        "auditoria.unit-economics.margem-contribuicao-coortes-payback",
+        "auditoria.unit-economics.cac-ltv-payback",
+        "auditoria.saas.lancar-saas-metricas"
+      ]
+    },
+    {
+      "id": "logistica",
+      "nome": "Logística / entrega e suporte",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Sem dado de peso no resultado final. Réguas: frete + fulfillment 10-12% da receita (relato); devolução > 8% em 30 dias = rever descrição/medidas/fotos; chargeback abaixo dos limites das bandeiras antes de escalar; parcelado longo atrasa o caixa em ~10 meses.",
+      "pergunta": "Dá para entregar (ou dar acesso e suporte) no prazo prometido, com custo de entrega ≤ 12% da receita e devolução/chargeback sob controle?",
+      "como_medir": "Físico: prazo, custo de frete+fulfillment, fornecedores, estoque. Digital/serviço: entrega de acesso, capacidade de suporte, prazo de liberação do dinheiro.",
+      "evidencia_exigida": [
+        "custo e prazo de entrega",
+        "taxa de devolução/reembolso se houver",
+        "capacidade de suporte"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "não consegue entregar no prazo ou custo > 25% da receita",
+          "exemplo": "importação de 40 dias vendida como pronta entrega"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "entrega frágil (1 fornecedor, sem estoque) ou custo 15-25%",
+          "exemplo": "fornecedor único sem contrato"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "entrega ok, custo 12-15%, devolução 5-8%",
+          "exemplo": "frete caro para fora do Sudeste"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "prazo cumprido, custo ≤ 12%, devolução < 5%",
+          "exemplo": "estoque para 4+ semanas, 2 fornecedores"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "entrega instantânea ou automatizada, suporte com SLA",
+          "exemplo": "acesso digital imediato + suporte em horas"
+        }
+      ],
+      "docs_base": [
+        "oferta.lancamento.lancar-infoproduto-br",
+        "programacao.saas.pagamentos-br-pix-cartao",
+        "operacao.financeiro.fiscal-cobranca-br-2026"
+      ]
+    },
+    {
+      "id": "saturacao",
+      "nome": "Saturação e espaço de mecanismo",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Peso baixo por dado: a base mostra que produto saturado quase nunca falha pelo produto e trata saturação como exigência de mecanismo, não veto. Régua contável de sofisticação: ≥ 5 concorrentes na mesma promessa e < 30% com mecanismo = estágio 3; ≥ 30% = estágio 4. Vida mediana de anúncio 9 dias; só 6,8% passam de 30 dias.",
+      "pergunta": "Mesmo com concorrentes, há espaço para um ângulo ou mecanismo que eles não usam (promessa quebrada nas reclamações, estágio de sofisticação com lacuna)?",
+      "como_medir": "Contar concorrentes na mesma promessa e quantos usam mecanismo; ler reclamações (resposta > 90% com solução < 70% = promessa quebrada, brecha de ângulo).",
+      "evidencia_exigida": [
+        "contagem de concorrentes e estágio",
+        "lacuna encontrada com fonte"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "estágio 4-5 e nenhuma lacuna encontrada",
+          "exemplo": "todos usam o mesmo mecanismo e preço"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "saturado, lacuna só de preço",
+          "exemplo": "'mais barato'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "saturado com lacuna de ângulo não provada",
+          "exemplo": "persona pouco atendida, sem reclamação que mostre"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "lacuna com prova (reclamações recorrentes, estágio 3 com < 30% de mecanismo)",
+          "exemplo": "concorrentes prometem e reclamações dizem que não cumprem"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "categoria com demanda e quase sem concorrente direto",
+          "exemplo": "produto familiar com mecanismo novo ainda não anunciado"
+        }
+      ],
+      "docs_base": [
+        "pesquisa.mecanismo.mecanismo-unico-sofisticacao",
+        "pesquisa.concorrencia.ad-library-com-dados",
+        "pesquisa.concorrencia.analise-concorrente-posicionamento",
+        "oferta.produto.familiar-desconhecido-e-novo-mecanismo"
+      ]
+    },
+    {
+      "id": "regulatorio_produto",
+      "nome": "Portão regulatório do produto",
+      "acesso": "todos",
+      "peso": 0,
+      "veto": true,
+      "base_peso": "Portão, peso 0 (não soma): separado do checklist de loja pela auditoria. Anvisa (notificação; promessa terapêutica proibida), Anatel (homologação e código no anúncio; marketplace responde junto desde 01/08/2025), Inmetro, CDC, FTC e lista de proibidos da plataforma.",
+      "pergunta": "O produto pode ser vendido e anunciado como planejado: registros/homologações em dia (Anvisa, Anatel, Inmetro quando couber), sem promessa terapêutica ou de ganho sem base, e fora da lista de proibidos da plataforma?",
+      "como_medir": "Consultar o órgão de cada categoria e a lista de proibidos do canal; listar cada alegação do produto com a prova. Sem alegação regulada: evidência 'categoria sem registro exigido' e nota ≥ 75.",
+      "evidencia_exigida": [
+        "situação regulatória por categoria (registro, homologação ou 'não exigido') com fonte",
+        "alegações do produto e a prova de cada uma"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "barrado: sem registro/homologação exigida, promessa terapêutica ou item proibido no canal",
+          "exemplo": "eletrônico sem homologação; suplemento 'que cura'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "registro pendente ou alegação sem prova",
+          "exemplo": "notificação em andamento"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "regular, com alegação em zona cinza",
+          "exemplo": "'ajuda a emagrecer' sem estudo"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "regular e alegações provadas",
+          "exemplo": "produto notificado, alegação da lista permitida"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "categoria sem regra especial ou tudo regular com dossiê arquivado",
+          "exemplo": "infoproduto sem promessa de ganho"
+        }
+      ],
+      "docs_base": [
+        "oferta.mecanismo.mecanismo-unico",
+        "criativos.estatico.anuncio-nativo-de-imagem",
+        "oferta.produto.familiar-desconhecido-e-novo-mecanismo"
+      ]
+    }
+  ],
+  "perfis": {
+    "loja": {
+      "descricao": "produto de loja (VIP). Auditoria: sem margem a conta não fecha; recompra varia 2-5x por vertical.",
+      "soma_1": true,
+      "inclui_vip": true,
+      "pesos": {
+        "demanda": 0.25,
+        "margem": 0.25,
+        "potencial_criativo": 0.15,
+        "produto_fisico_loja": 0.1,
+        "recompra": 0.1,
+        "logistica": 0.1,
+        "saturacao": 0.05,
+        "regulatorio_produto": 0
+      },
+      "veto": {
+        "margem": 75,
+        "regulatorio_produto": 25
+      }
+    },
+    "loja_consumivel": {
+      "descricao": "produto de loja consumível (VIP): recompra 0,15; os pesos renormalizam (soma 1,05).",
+      "inclui_vip": true,
+      "pesos": {
+        "demanda": 0.25,
+        "margem": 0.25,
+        "potencial_criativo": 0.15,
+        "produto_fisico_loja": 0.1,
+        "recompra": 0.15,
+        "logistica": 0.1,
+        "saturacao": 0.05,
+        "regulatorio_produto": 0
+      },
+      "veto": {
+        "margem": 75,
+        "regulatorio_produto": 25
+      }
+    }
+  }
+}

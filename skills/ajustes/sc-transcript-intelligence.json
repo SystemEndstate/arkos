@@ -1,0 +1,16 @@
+[
+  {
+    "arquivo": "SKILL.md",
+    "de": "name: transcript-intelligence\n",
+    "para": "name: sc-transcript-intelligence\n",
+    "porque": "nome já usado no pacote pela versão gooseworks-ai/goose-skills; as duas ficam instaladas e o roteador escolhe pelo que cada uma faz a mais",
+    "fonte": "pedido do usuário (2026-11-23): instalar mesmo com sobreposição"
+  },
+  {
+    "arquivo": "SKILL.md",
+    "de": "description: Use when",
+    "para": "description: >-\n  [ARKOS: relatório pronto de transcrições (TL;DR, nota por vídeo, padrões do conjunto, swipe file de ganchos, ideias de reaproveitamento); a transcript-intelligence entrega os átomos com timestamp para outra skill.] Use when",
+    "porque": "a descrição diz quando escolher esta em vez da versão gooseworks",
+    "fonte": "comparação das duas SKILL.md nos commits fixos"
+  }
+]

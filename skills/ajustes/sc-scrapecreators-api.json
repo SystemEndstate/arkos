@@ -1,0 +1,16 @@
+[
+  {
+    "arquivo": "SKILL.md",
+    "de": "name: scrapecreators-api\n",
+    "para": "name: sc-scrapecreators-api\n",
+    "porque": "nome já usado no pacote pela versão gooseworks-ai/goose-skills; as duas ficam instaladas e o roteador escolhe pelo que cada uma faz a mais",
+    "fonte": "pedido do usuário (2026-11-23): instalar mesmo com sobreposição"
+  },
+  {
+    "arquivo": "SKILL.md",
+    "de": "description: >-\n  Scrape",
+    "para": "description: >-\n  [ARKOS: guia COMPLETO da API, com rota por intenção (perfil, posts, comentários, transcrição, busca, Biblioteca de Anúncios, TikTok Shop, link-in-bio), custo em créditos por endpoint, paginação e limites; a scrapecreators-api é só o contrato curto de coleta.] Scrape",
+    "porque": "a descrição diz quando escolher esta em vez da versão gooseworks",
+    "fonte": "comparação das duas SKILL.md nos commits fixos"
+  }
+]

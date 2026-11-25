@@ -1,0 +1,381 @@
+{
+  "regua": "criativo",
+  "versao": "1.1.0",
+  "atualizado": "2026-11-23",
+  "acesso": "todos",
+  "objeto": "Peça de anúncio (vídeo, estático, carrossel) antes de subir ou depois de rodar. A nota antes de rodar é previsão; depois de rodar, o resultado da conta (CPA/lucro) manda e a régua só localiza a etapa que vazou.",
+  "corte": {
+    "aprovar": 75,
+    "ajustar": 50
+  },
+  "confianca_pesos": "media",
+  "nota_pesos": "A base não tem número do tipo 'o criativo explica X% do resultado'. Pesos saem do tamanho dos efeitos medidos em cada critério: gancho (46% das compras vindas de Reels acontecem nos primeiros 2 s, dado oficial; 'bloco que mais move o CPA') > ângulo (hit rate de tática varia de ~4,6% a ~11%, 2,4x; a plataforma diz que diversificar criativo é a melhor alavanca) > adequação à plataforma (9:16 com áudio e safe zone: CPA 34,5% menor que imagem, dado oficial lido por operador) = prova (hit rate de formato 6,6-9,8%; 5 avaliações = +270% de chance de compra) > retenção e clareza (sem dado de peso; funcionam como diagnóstico) > risco de política (portão: veto, peso baixo para não somar). Quase todos os números de peso vêm de fornecedores de ferramenta; recalibrar com aprendizado.jsonl (nota antes de rodar × CPA real; correlação de Spearman < 0,3 entre nota e lucro = pesos errados).",
+  "vetos": "risco_politica abaixo de 25 = 'descartar' (peça não sobe), qualquer que seja a nota final. Vetos duros (entrada 'bandeiras'): ia_efeito_categoria_vetada, persona_ia_sem_rotulo.",
+  "aplicabilidade": "Critérios VIP com 'aplica_se' só entram no cálculo quando a peça for daquele tipo; fora disso saem do cálculo (não contam 0).",
+  "criterios": [
+    {
+      "id": "gancho",
+      "nome": "Gancho (0-3 s)",
+      "acesso": "todos",
+      "peso": 0.25,
+      "base_peso": "Maior efeito medido da régua: 46% das compras de Reels nos primeiros 2 s (oficial, 2026); 90% do impacto de recordação nos primeiros 6 s (oficial); CTR de 2% para 2,25% cortou CAC ~30% num funil fixo (relato). Auditoria: TikTok só mede 2 s e 6 s; taxa de 2 s com mediana ~27%; faixas TikTok separadas no texto de cada faixa.",
+      "pergunta": "Nos primeiros 3 segundos o anúncio para o scroll E diz para quem é (persona ou dor nomeada), com texto na tela já no 1º segundo?",
+      "como_medir": "Antes: promessa ou produto até o segundo 3; texto no 1º segundo; o gancho filtra o público certo. Depois: Meta = hook rate de 3 s (views 3 s ÷ impressões); TikTok = taxa de 2 s (views 2 s ÷ impressões; o gerenciador não tem 3 s) com taxa de 6 s; sempre ao lado do hold e do CPA; com 30+ vídeos (10+ no TikTok), comparar com a mediana da conta.",
+      "evidencia_exigida": [
+        "descrição ou frame dos 3 primeiros segundos",
+        "depois de rodar: hook rate + hold + CPA lado a lado e mediana da conta"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "abertura lenta ou gancho genérico; Meta hook 3 s < 20% / TikTok 2 s < 15%",
+          "exemplo": "'Você precisa ver isso' — CTR bonito, CPA ruim"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "para o scroll mas não diz para quem; Meta 20-25% / TikTok 15-20%",
+          "exemplo": "pergunta vaga sem persona"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "nomeia persona ou dor até 3 s; Meta 25-30% / TikTok 20-27%",
+          "exemplo": "benefício claro, sem tensão"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "persona + tensão até 3 s, texto no 1º segundo; Meta 30-35% com hold ≥ 25% / TikTok 27-35% com taxa de 6 s ≥ 17%",
+          "exemplo": "'Se você é dentista e ainda agenda pelo WhatsApp...'"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima e Meta > 35% / TikTok > 35% (ou 20%+ acima da mediana da conta) com CPA no alvo",
+          "exemplo": "frase literal de cliente que vira filtro e promessa"
+        }
+      ],
+      "docs_base": [
+        "criativos.hooks.hooks-que-param-o-scroll",
+        "video.anuncio.video-anuncio-estrutura-e-edicao",
+        "trafego.meta.analise-4pi-gpt-diagnostico-de-anuncio",
+        "criativos.swipe.olimabane-5-hooks-black-friday-perenes"
+      ]
+    },
+    {
+      "id": "angulo",
+      "nome": "Ângulo (desejo, dor, objeção, prova, mecanismo, comparação) e oferta explícita",
+      "acesso": "todos",
+      "peso": 0.2,
+      "base_peso": "Hit rate por tática vai de ~4,6% a ~11% (550 mil anúncios; 'vencedor' = gasto ≥ 10x a mediana); a plataforma trata criativos parecidos como um só e chama diversificação de 'melhor alavanca'. No BR, oferta explícita no criativo teve custo por conversão 10-20% menor (640 mil anúncios). Anúncio que não gasta = desejo errado, não gancho.",
+      "pergunta": "A peça tem um ângulo claro, diferente dos últimos anúncios da conta, ligado a um desejo real do público e ao nível de consciência dele?",
+      "como_medir": "Antes: mapear persona × ângulo × consciência; comparar com os 10 últimos anúncios da conta (é diferente?). Depois: distribuição do gasto por conceito; peça que não gasta indica desejo errado.",
+      "evidencia_exigida": [
+        "ângulo e persona declarados",
+        "nível de consciência mirado",
+        "comparação com anúncios ativos da conta"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "sem ângulo (lista de características) ou cópia de anúncio que já roda na conta",
+          "exemplo": "'qualidade e preço justo'"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "ângulo genérico, igual ao do mercado",
+          "exemplo": "mesmo desconto que todo concorrente mostra"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "ângulo claro, mas mira consciência errada",
+          "exemplo": "depoimento e desconto para quem ainda não sabe que tem o problema"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "ângulo novo na conta, ligado a desejo do VoC e à consciência certa",
+          "exemplo": "mesmo produto em 'vontade de doce à noite' para um público e 'ao acordar' para outro"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "tudo acima + oferta explícita coerente com o ângulo e prova de desejo (concorrente roda há 90+ dias)",
+          "exemplo": "'nós vs eles' com dado de comparação e oferta na tela"
+        }
+      ],
+      "docs_base": [
+        "criativos.estrategia.angulos-e-diversidade-andromeda",
+        "criativos.estrategia.consciencia-sofisticacao-anuncio-e-pagina",
+        "trafego.meta.andromeda-como-funciona-2026",
+        "pesquisa.concorrencia.criativo-angulos-formatos-e-teardown"
+      ]
+    },
+    {
+      "id": "prova",
+      "nome": "Prova específica",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "Hit rate de formatos de prova: demonstração 8,1%, depoimento 6,6%, unboxing 9,8% (fornecedor); 5 avaliações aumentam a chance de compra em 270% (estudo independente). Prova social genérica teve efeito nulo em réplica de estudo: por isso só prova específica pontua.",
+      "pergunta": "A peça mostra prova específica e verificável (demonstração, número com contexto, cliente real identificável) e não só afirmação?",
+      "como_medir": "Antes: listar cada prova e a origem (review real, dado documentado, demonstração ao vivo). Depois: comparar CPA das variantes com e sem a prova.",
+      "evidencia_exigida": [
+        "origem de cada prova (link, documento, autorização do cliente)"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "sem prova, ou prova inventada (depoimento/autoridade/'teste de laboratório' fabricado)",
+          "exemplo": "'aprovado por especialistas' sem quem nem onde"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "prova genérica",
+          "exemplo": "'milhares de clientes satisfeitos'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "prova real, pouco específica",
+          "exemplo": "estrelas sem número de avaliações"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "prova específica com origem",
+          "exemplo": "nota 4,6 com 1.200 avaliações, cliente nomeado com autorização"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "demonstração do resultado na tela o tempo todo",
+          "exemplo": "espuma voltando à forma na mão durante todo o vídeo"
+        }
+      ],
+      "docs_base": [
+        "criativos.estatico.anuncio-nativo-de-imagem",
+        "criativos.estrategia.angulos-e-diversidade-andromeda",
+        "design.landing.estrutura-landing-que-converte"
+      ]
+    },
+    {
+      "id": "adequacao_plataforma",
+      "nome": "Adequação à plataforma e ao posicionamento",
+      "acesso": "todos",
+      "peso": 0.15,
+      "base_peso": "9:16 com áudio e safe zone: CPA 34,5% menor que imagem no Reels e 15% menor que vídeo fora de 9:16 sem áudio; 'linguagem de Reels' CPA 16% melhor e ROAS 13% maior (dado oficial lido por operador). Mais de 75% das views de Reels são com som.",
+      "pergunta": "A peça segue o formato nativo do posicionamento (9:16, som, safe zone 14% topo / 35% base / 6% laterais, linguagem nativa) e não parece anúncio de TV recortado?",
+      "como_medir": "Antes: checklist de specs por posicionamento. Depois: breakdown de CPA por posicionamento.",
+      "evidencia_exigida": [
+        "proporção e duração",
+        "áudio sim/não",
+        "checagem de safe zone"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "formato errado para o posicionamento",
+          "exemplo": "16:9 sem legenda no Reels"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "formato certo, texto fora da safe zone ou sem som",
+          "exemplo": "CTA escondido atrás da interface"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "specs certas, linguagem de anúncio tradicional",
+          "exemplo": "vídeo institucional em 9:16"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "specs certas e linguagem nativa",
+          "exemplo": "pessoa falando com a câmera, cortes rápidos, legenda"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "nativo e com versão por posicionamento",
+          "exemplo": "variante para Reels, Stories e Feed"
+        }
+      ],
+      "docs_base": [
+        "video.anuncio.video-anuncio-estrutura-e-edicao",
+        "trafego.tiktok.tiktok-ads-2026",
+        "criativos.estatico.estatico-e-carrossel"
+      ]
+    },
+    {
+      "id": "retencao_prevista",
+      "nome": "Retenção prevista (o corpo segura)",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Sem dado de peso no resultado final; pesa como diagnóstico: hook ≥ 30% com hold < 25% = corpo não segura; caso de hook 44% e hold 1,89% deu ROAS 0,85 (relato). Hold de referência: base 25%, topo 45% (fornecedor). Definição fixa: hold = views 15 s ÷ views 3 s.",
+      "pergunta": "O corpo entrega o que o gancho prometeu, com ritmo (troca de cena ou informação nova a cada 2-3 s) até o CTA?",
+      "como_medir": "Antes: ler o roteiro e marcar onde a promessa do gancho é paga; ritmo de cortes. Depois: hold rate (15 s ÷ 3 s) e curva de retenção.",
+      "evidencia_exigida": [
+        "roteiro ou decupagem",
+        "depois de rodar: hold rate com a definição 15 s ÷ 3 s"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "corpo não tem relação com o gancho; hold < 10%",
+          "exemplo": "gancho de curiosidade e corpo de catálogo"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "promessa paga tarde; hold 10-20%",
+          "exemplo": "40 s até mostrar o produto"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "promessa paga, ritmo irregular; hold 20-25%",
+          "exemplo": "trecho parado no meio"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "promessa paga cedo, ritmo constante; hold 25-45%",
+          "exemplo": "demonstração em sequência curta"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "re-ganchos e hold > 45%",
+          "exemplo": "lista '3 motivos' com cada item abrindo o próximo"
+        }
+      ],
+      "docs_base": [
+        "criativos.hooks.hooks-que-param-o-scroll",
+        "video.anuncio.video-anuncio-estrutura-e-edicao",
+        "growth.organico.hooks-retencao-e-cadencia"
+      ]
+    },
+    {
+      "id": "clareza",
+      "nome": "Clareza e coerência com a página",
+      "acesso": "todos",
+      "peso": 0.1,
+      "base_peso": "Sem dado de peso; sinal qualitativo de fornecedor (mensagem que demora a ficar clara aparece menos entre vencedores; benefício vago no fundo do ranking). Incoerência anúncio-página é a causa mais citada de rejeição ≥ 85% (relato).",
+      "pergunta": "Em uma frase dá para dizer o que é, para quem e o que fazer, e a página de destino continua exatamente a promessa do anúncio?",
+      "como_medir": "Antes: teste de 1 frase (pedir a alguém de fora resumir a peça); comparar a promessa com a primeira dobra da página. Depois: rejeição da página e taxa de clique → conversão.",
+      "evidencia_exigida": [
+        "resumo de 1 frase",
+        "print da primeira dobra da página de destino"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "não dá para dizer o que é; página fala de outra coisa",
+          "exemplo": "anúncio de dor, página de home genérica"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "produto claro, benefício vago",
+          "exemplo": "'transforme sua vida'"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "claro, mas página quebra a sequência",
+          "exemplo": "anúncio promete teste grátis, página pede compra"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "claro em 1 frase e página coerente",
+          "exemplo": "mesma headline do anúncio na dobra"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "claro, coerente e página escolhida pelo ângulo/consciência",
+          "exemplo": "um destino por ângulo"
+        }
+      ],
+      "docs_base": [
+        "criativos.hooks.hooks-que-param-o-scroll",
+        "criativos.estrategia.consciencia-sofisticacao-anuncio-e-pagina",
+        "copy.landing.estrutura-landing-conversao-2026"
+      ]
+    },
+    {
+      "id": "risco_politica",
+      "nome": "Risco de política e lei",
+      "acesso": "todos",
+      "peso": 0.05,
+      "veto": true,
+      "base_peso": "Portão, não soma: a plataforma reduz distribuição de headline enganosa e pune página/domínio inteiro (oficial); antes/depois é o estático mais reprovado; órgão sanitário já proibiu toda a propaganda de um suplemento em 2026 (oficial). Peso baixo + veto.",
+      "pergunta": "A peça está livre de alegação proibida, autoridade ou depoimento falso, IA sem rótulo, persona de IA se passando por criador, IA demonstrando efeito em categoria vetada (TikTok Shop: Beleza, Cuidados Pessoais, Saúde) e uso de marca/imagem de terceiros?",
+      "como_medir": "Checklist contra política da plataforma e lei local (CDC arts. 36-38, CONAR, Anvisa no BR; FTC nos EUA); rótulo de IA quando exigido. TikTok Shop: Beleza/Cuidados Pessoais/Saúde sem IA demonstrando o efeito central (regra desde 19/10/2026); IA rotulada; nenhuma conta de IA se passando por criador. Esses casos também entram como bandeira de veto duro.",
+      "evidencia_exigida": [
+        "checklist de política preenchido",
+        "origem de cada alegação"
+      ],
+      "faixas": [
+        {
+          "min": 0,
+          "max": 24,
+          "descricao": "alegação proibida, depoimento/autoridade falsa, estatística de medo sem fonte, IA demonstrando efeito em categoria vetada ou persona de IA sem rótulo",
+          "exemplo": "vídeo de IA mostrando a pele 'antes e depois' de um sérum no TikTok Shop"
+        },
+        {
+          "min": 25,
+          "max": 49,
+          "descricao": "alegação forte sem prova documentada",
+          "exemplo": "'resultado em 24 h' sem estudo"
+        },
+        {
+          "min": 50,
+          "max": 74,
+          "descricao": "zona cinza (antes/depois, urgência sem prazo real)",
+          "exemplo": "contador regressivo que reinicia"
+        },
+        {
+          "min": 75,
+          "max": 89,
+          "descricao": "sem risco conhecido, alegações com prova",
+          "exemplo": "benefício descrito com estudo citado"
+        },
+        {
+          "min": 90,
+          "max": 100,
+          "descricao": "sem risco e com rótulos/disclaimers exigidos",
+          "exemplo": "IA rotulada, publicidade identificada"
+        }
+      ],
+      "docs_base": [
+        "criativos.estatico.anuncio-nativo-de-imagem",
+        "criativos.estatico.estatico-e-carrossel",
+        "criativos.ia.anuncio-com-ia-criterio-e-producao"
+      ]
+    }
+  ],
+  "vetos_duros": [
+    {
+      "id": "ia_efeito_categoria_vetada",
+      "descricao": "TikTok Shop: IA demonstrando o efeito central em Beleza, Cuidados Pessoais ou Saúde (proibido desde 19/10/2026)"
+    },
+    {
+      "id": "persona_ia_sem_rotulo",
+      "descricao": "conta ou persona de IA se passando por criador real, ou IA sem o rótulo exigido pela plataforma"
+    }
+  ]
+}

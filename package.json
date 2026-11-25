@@ -1,0 +1,20 @@
+{
+  "name": "arkos-cli",
+  "version": "0.4.3",
+  "description": "Terminal ARKOS: Claude Code com a camada ARKOS (banner, módulos, statusLine, hooks, /arkos, /relatorio).",
+  "type": "module",
+  "bin": {
+    "arkos": "arkos.mjs"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "dependencies": {
+    "@lydell/node-pty": "1.2.0-beta.18",
+    "@xterm/headless": "6.0.0"
+  }
+}
